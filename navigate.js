@@ -1,6 +1,7 @@
 import React from 'react';
 import { Image, Text } from 'react-native';
 import Main from './Pages/Main/Main';
+// import i18next from './services/i18next';
 // import Name from './Pages/Name/Name';
 // import Email from './Pages/Email/Email';
 // import Gender from './Pages/Gender/Gender';
@@ -19,9 +20,10 @@ import Main from './Pages/Main/Main';
 
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 
-const Tab = createBottomTabNavigator()
+// import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
+
+// const Tab = createBottomTabNavigator()
 
 // function TabNavigator() {
 //   return (
@@ -85,7 +87,7 @@ const Tab = createBottomTabNavigator()
 const Stack = createNativeStackNavigator();
 
 export default function Navigate() {
-
+    // console.log(i18next)
     return  <NavigationContainer>
         <Stack.Navigator
             // initialRouteName="Main"

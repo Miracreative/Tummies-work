@@ -3,29 +3,29 @@ import { View, FlatList, Animated} from 'react-native';
 import SlideItem from "../SlideItem/SlideItem";
 import Dots from "../Dots/Dots";
 import {icons} from './../../constants';
-// import {useTranslation} from 'react-i18next';
+import {useTranslation} from 'react-i18next';
 import styled from "./slider.scss";
 
 const Slider = () => {
-    // const {t} = useTranslation();
+    const {t} = useTranslation();
 
-
+    // console.log(t)
     const slides = [
         {
             id: 1,
             image: icons.slideBack,
-            title: 'we deliver to you location',
-            text: 'No additional fees. We deliver to you doorstep whether in the morning or the night before'
+            title: t('sliderTitle-1'),
+            text: t('sliderText-1')
         },
         {
             id: 2,
             image: icons.slideBack,
-            title: 'choose you meals'
+            title: t('sliderText-2')
         },
         {
             id: 3,
             image: icons.slideBack,
-            title: 'meal plans for your kids'
+            title: t('sliderText-3')
         }
     ]
 

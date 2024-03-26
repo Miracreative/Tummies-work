@@ -11,13 +11,10 @@
   "dependencies": {
     "@expo/webpack-config": "^18.0.1",
     "@gorhom/bottom-sheet": "^4.6.0",
-    
     "@react-navigation/bottom-tabs": "^6.5.16",
     "@react-navigation/native": "^6.1.10",
     "@react-navigation/native-stack": "^6.9.22",
     "@react-navigation/stack": "^6.3.21",
-    "@rneui/themed": "^4.0.0-rc.8",
-    "eas": "^0.1.0",
     "expo": "~48.0.18",
     "expo-app-loading": "^2.1.1",
     "expo-cli": "^6.3.8",

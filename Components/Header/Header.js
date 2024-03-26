@@ -9,7 +9,7 @@ import styled from "./header.scss";
 // import {connect} from 'react-redux';
 import {lang} from '../../actions';
 import { useDispatch, useSelector } from 'react-redux';
-
+import i18next from "./../../services/i18next";
 
 const Header = ({onPress, isBack=true, isButtons=true, isWhite=false, lang=false, isStatus=true}) => {
     const language = useSelector(state => state.language);

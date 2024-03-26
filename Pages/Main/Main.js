@@ -3,14 +3,13 @@ import {View, Image, ImageBackground,  SafeAreaView, } from 'react-native';
 import styled from './style.scss';
 import {icons} from "../../constants";
 import BtnButton from '../../Components/Button/Button';
-// import {useTranslation} from 'react-i18next';
+import i18next from 'i18next';
+import {useTranslation} from 'react-i18next';
 import Header from '../../Components/Header/Header';
 import Slider from '../../Components/Slider/Slider';
 
 export default function Main({ navigation}) {
-    // const {t} = useTranslation();
-	
-
+    const {t} = useTranslation();
   return (
 	
     <View style={styled.container}>
@@ -26,12 +25,12 @@ export default function Main({ navigation}) {
 					<BtnButton 
 					// onPress={() => {navigation.navigate('Account')}} 
 					onPress={() => console.log('Press')}
-					title={'Get started'} buttonStyle={{marginTop: 15, backgroundColor:"#FFFFFF"}} textStyle={{color: 'rgba(12, 3, 0, 1)'}} arrow={true} />
+					title={t('getStarted')} buttonStyle={{marginTop: 15, backgroundColor:"#FFFFFF"}} textStyle={{color: 'rgba(12, 3, 0, 1)'}} arrow={true} />
 					<BtnButton 
 					// onPress={() => navigation.navigate('Auth')} 
 					onPress={() => console.log('Press')}
 
-					title={"Log in"} buttonStyle={{marginTop: 15, marginBottom: 20 }} textStyle={{color: '#FFFFFF'}}/>
+					title={t("logIn")} buttonStyle={{marginTop: 15, marginBottom: 20 }} textStyle={{color: '#FFFFFF'}}/>
 					
 				</View>
 			</SafeAreaView>
