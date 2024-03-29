@@ -1,6 +1,6 @@
 import React from 'react';
-import { Image, Text } from 'react-native';
 import Main from './Pages/Main/Main';
+import Entertaiment from './Pages/Entertaiment/Entertaiment';
 // import i18next from './services/i18next';
 // import Name from './Pages/Name/Name';
 // import Email from './Pages/Email/Email';
@@ -97,6 +97,10 @@ export default function Navigate() {
             <Stack.Screen
                 name="Main"
                 component={Main}
+            />
+            <Stack.Screen
+                name="Entertaiment"
+                component={Entertaiment}
             />
 
             {/* <Stack.Screen

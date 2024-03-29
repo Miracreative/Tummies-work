@@ -2,18 +2,25 @@ import React, {useState} from "react";
 import { View, TouchableOpacity, Image, Text, StatusBar} from 'react-native';
 import { RFPercentage, RFValue } from "react-native-responsive-fontsize";
 
-
 import{icons} from "./../../constants";
 
 import styled from "./header.scss";
-// import {connect} from 'react-redux';
-import {lang} from '../../actions';
+import {langType} from '../../actions';
 import { useDispatch, useSelector } from 'react-redux';
-import i18next from "./../../services/i18next";
+import i18next from './../../services/i18next';
 
-const Header = ({onPress, isBack=true, isButtons=true, isWhite=false, lang=false, isStatus=true}) => {
+const Header = ({onPress, isBack=true, isButtons=true, isWhite=false, lang=false, isStatus=true, onPressEntertaiment}) => {
     const language = useSelector(state => state.language);
     const dispatch = useDispatch();
+
+    const changeLng = () => {
+        dispatch(langType())
+		if(language =='ar') {
+			i18next.changeLanguage('en');
+		} else {
+			i18next.changeLanguage('ar');
+		}
+	  };
 
     return (
         <View style={[styled.header, {paddingTop: isStatus? StatusBar.currentHeight : 0}]}>
@@ -48,7 +55,7 @@ const Header = ({onPress, isBack=true, isButtons=true, isWhite=false, lang=false
                 isButtons ? <View style={styled.header__wrapper}>
                 
                 <TouchableOpacity
-                    onPress={() => console.log('entertament')}
+                    onPress={onPressEntertaiment}
                     style={styled.header__container}>
                         {
                             isWhite ?        <Image 
@@ -74,7 +81,7 @@ const Header = ({onPress, isBack=true, isButtons=true, isWhite=false, lang=false
                 {
                     lang ? <TouchableOpacity
                     style={styled.header__container}
-                    onPress={() => console.log('lang')}
+                    onPress={() => changeLng()}
                     // onPress={() => dispatch(lang())}
                     >
                         {
@@ -111,7 +118,7 @@ const Header = ({onPress, isBack=true, isButtons=true, isWhite=false, lang=false
                 </TouchableOpacity>
                 <TouchableOpacity
                     style={styled.header__container}
-                    onPress={() => dispatch(lang())}>
+                    onPress={() => changeLng()}>
                    <View 
                         style={styled.header__ring}>
                         <Text 

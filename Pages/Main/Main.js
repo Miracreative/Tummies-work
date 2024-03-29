@@ -1,9 +1,8 @@
 import React from 'react';
-import {View, Image, ImageBackground,  SafeAreaView, } from 'react-native';
+import {View, Image,  SafeAreaView, } from 'react-native';
 import styled from './style.scss';
 import {icons} from "../../constants";
 import BtnButton from '../../Components/Button/Button';
-import i18next from 'i18next';
 import {useTranslation} from 'react-i18next';
 import Header from '../../Components/Header/Header';
 import Slider from '../../Components/Slider/Slider';
@@ -15,7 +14,12 @@ export default function Main({ navigation}) {
     <View style={styled.container}>
 			<SafeAreaView style={{flex:1}}>
 			<View style={{flex: 0.8}}>
-					<Header onPress={() => console.log('mainScreen')} isBack={false} lang={true} isWhite={true}/>
+					<Header onPress={() => console.log('mainScreen')} 
+					isBack={false} 
+					lang={true} 
+					isWhite={true}
+					onPressEntertaiment={() => navigation.navigate('Entertaiment')}
+					/>
 					<Image
 						style={styled.image}
 						source={icons.redTitle}/>
