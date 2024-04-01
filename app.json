@@ -38,6 +38,12 @@
         {
           "microphonePermission": "Allow tummiesapp to access your microphone."
         }
+      ],
+      [
+        "expo-screen-orientation",
+        {
+          "initialOrientation": "DEFAULT"
+        }
       ]
     ]
   }
