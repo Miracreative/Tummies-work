@@ -51,6 +51,8 @@ const deliveryMenuActive = require("./../assets/icons/delivery-menu-active.png")
 const accountMenuActive = require("./../assets/icons/account-menu-active.png")
 const entertaimentMenuActive = require("./../assets/icons/entertaiment-menu-active.png")
 const cateringMenuActive = require("./../assets/icons/catering-menu-active.png")
+const plug = require("./../assets/icons/plug.png")
+const play = require("./../assets/icons/play.png")
 
 
 
@@ -108,4 +110,6 @@ export default {
     accountMenuActive,
     entertaimentMenuActive,
     cateringMenuActive,
+    plug,
+    play
 }
