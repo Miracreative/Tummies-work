@@ -19,6 +19,7 @@ export default function Main({ navigation}) {
 					lang={true} 
 					isWhite={true}
 					onPressEntertaiment={() => navigation.navigate('Entertaiment')}
+					onPressCatering={() => navigation.navigate('Catering')}
 					/>
 					<Image
 						style={styled.image}

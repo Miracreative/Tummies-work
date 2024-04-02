@@ -17,7 +17,7 @@ function VideoApp({name, url}) {
       
         
   return (
-        <View style={styled.videobox}>
+        <View style={[styled.videobox]}>
             <Video
                 onPress={() => setStatus()}
                 ref={video}
@@ -31,9 +31,9 @@ function VideoApp({name, url}) {
                 posterStyle= {styled.poster}
                 resizeMode={ResizeMode.CONTAIN}
                 onFullscreenUpdate={async () => {
-                    // await ScreenOrientation.lockAsync(
-                    // orientationIsLandscape ? ScreenOrientation.OrientationLock.PORTRAIT : 
-                    // ScreenOrientation.OrientationLock.LANDSCAPE_LEFT);
+                    await ScreenOrientation.lockAsync(
+                    orientationIsLandscape ? ScreenOrientation.OrientationLock.PORTRAIT : 
+                    ScreenOrientation.OrientationLock.LANDSCAPE_LEFT);
                     setOrientationIsLandscape(!orientationIsLandscape)
                     console.log(orientationIsLandscape);
                 }}

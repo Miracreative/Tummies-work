@@ -1,4 +1,7 @@
 const initialState = {language: 'en',
+                        catering: {
+                            number: ""
+                        },
                         userInfo: {
                             currentAddress: 'non location',
                             latitude: 24.6877,
@@ -59,6 +62,14 @@ const reducer = (state = initialState, action) => {
                     language: 'en'
                 }
             }
+        case "CATERING": {
+            return {
+                ...state,
+                catering : {
+                    number : action.payload
+                }
+            }
+        }
         case 'LATITUDE': 
             return {
                 ...state,

@@ -9,7 +9,7 @@ import {langType} from '../../actions';
 import { useDispatch, useSelector } from 'react-redux';
 import i18next from './../../services/i18next';
 
-const Header = ({onPress, isBack=true, isButtons=true, isWhite=false, lang=false, isStatus=true, onPressEntertaiment}) => {
+const Header = ({onPress, isBack=true, isButtons=true, isWhite=false, lang=false, isStatus=true, onPressEntertaiment, onPressCatering}) => {
     const language = useSelector(state => state.language);
     const dispatch = useDispatch();
 
@@ -67,7 +67,7 @@ const Header = ({onPress, isBack=true, isButtons=true, isWhite=false, lang=false
               
                 </TouchableOpacity>
                 <TouchableOpacity
-                    onPress={() => console.log('catering')}
+                    onPress={onPressCatering}
                     style={styled.header__container}>
                         {
                             isWhite ?  <Image 
@@ -103,14 +103,14 @@ const Header = ({onPress, isBack=true, isButtons=true, isWhite=false, lang=false
             </View> : <View style={styled.header__wrapper_opacity}>
                 
                 <TouchableOpacity
-                    onPress={() => console.log('entertament')}
+                    onPress={onPressEntertaiment}
                     style={styled.header__container}>
                     <Image 
                         style={styled.header__img}
                         source={icons.entertament}/>
                 </TouchableOpacity>
                 <TouchableOpacity
-                    onPress={() => console.log('catering')}
+                    onPress={ onPressCatering}
                     style={styled.header__container}>
                     <Image 
                         style={styled.header__img}
