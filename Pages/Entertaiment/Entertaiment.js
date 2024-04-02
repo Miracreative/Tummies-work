@@ -1,11 +1,9 @@
 import React, { useCallback } from 'react';
-import * as ScreenOrientation from 'expo-screen-orientation';
-import YouTube from 'react-native-youtube';
 import {View, Image,  SafeAreaView, Text, ScrollView, TouchableOpacity} from 'react-native';
 import styled from './style.scss';
 import {useTranslation} from 'react-i18next';
 import { RFPercentage, RFValue } from "react-native-responsive-fontsize";
-import * as Linking from 'expo-linking';
+// import * as Linking from 'expo-linking';
 import Header from '../../Components/Header/Header';
 import VideoApp from '../../Components/VideoApp/VideoApp';
 import YouTubeVideo from '../../Components/YouTubeVideo/YouTubeVideo';
@@ -45,6 +43,7 @@ export default function Entertaiment({ navigation}) {
 					lang={false} 
 					isWhite={false}
 					onPressEntertaiment={() => navigation.navigate('Entertaiment')}
+          onPressCatering={() => navigation.navigate('Catering')}
 					/>
             <ScrollView>
                 <Text style={[styled.title, {fontSize: RFValue ( 22 ,  740)}]}>{t("enter")}</Text>

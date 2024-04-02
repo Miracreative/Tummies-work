@@ -73,5 +73,11 @@
     "address": "Address",
     "deliveryTime": "Delivery time",
     "manage": "Manage subscription",
-    "enter": "Entertaiment"
+    "enter": "Entertaiment",
+    "catering": "Catering",
+    "cateringDescr": "Thank you for choosing our catering service. Contact us for further catering bookings",
+    "contactNumber": "Contact number",
+    "cateringTitle-1": "Tummies buffet",
+    "cateringTitle-2": "Mail per child ' Box '",
+    "cateringTitle-3": "Tummies Full step"
 }
