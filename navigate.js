@@ -3,6 +3,7 @@ import Main from './Pages/Main/Main';
 import Entertaiment from './Pages/Entertaiment/Entertaiment';
 import Catering from './Pages/Catering/Catering';
 import CateringDetail from './Pages/CateringDetail/CateringDetail';
+import Results from './Pages/Results/Results';
 // import i18next from './services/i18next';
 // import Name from './Pages/Name/Name';
 // import Email from './Pages/Email/Email';
@@ -92,7 +93,7 @@ export default function Navigate() {
     // console.log(i18next)
     return  <NavigationContainer>
         <Stack.Navigator
-            // initialRouteName="Main"
+            initialRouteName="Results"
             screenOptions={{
                 headerShown: false,
             }}>
@@ -111,6 +112,10 @@ export default function Navigate() {
              <Stack.Screen
                 name="CateringDetail"
                 component={CateringDetail}
+            />
+            <Stack.Screen
+                name="Results"
+                component={Results}
             />
 
             {/* <Stack.Screen

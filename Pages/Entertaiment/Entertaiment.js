@@ -1,5 +1,5 @@
 import React, { useCallback } from 'react';
-import {View, Image,  SafeAreaView, Text, ScrollView, TouchableOpacity} from 'react-native';
+import {View, SafeAreaView, Text, ScrollView,} from 'react-native';
 import styled from './style.scss';
 import {useTranslation} from 'react-i18next';
 import { RFPercentage, RFValue } from "react-native-responsive-fontsize";
