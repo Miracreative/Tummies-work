@@ -27,12 +27,7 @@ export default function Entertaiment({ navigation}) {
       fetchVideos()
     }, [])
   
-    let videos = items.map((obj) => (<VideoApp key={obj.id} {...obj}/>));
-  // const link ='https://www.youtube.com/watch?v=NVIbCvfkO3E';
-  // const openLink = () => Linking.openURL(link);
-  // const showVideoInFullscreen = async () => { await video.current.presentFullscreenPlayer();
-  // status.isPlaying ? video.current.pauseAsync() : video.current.playAsync() }
-    // console.log(ScreenOrientation)
+    let videos = items.map((obj) => (<YouTubeVideo key={obj.id} {...obj}/>));
   const {t} = useTranslation();
   return (
 	
@@ -49,7 +44,6 @@ export default function Entertaiment({ navigation}) {
                 <Text style={[styled.title, {fontSize: RFValue ( 22 ,  740)}]}>{t("enter")}</Text>
                 <View style={styled.videoContainer}>
                   {videos}
-                  <YouTubeVideo/>
                 </View>
             </ScrollView>
         </SafeAreaView>
