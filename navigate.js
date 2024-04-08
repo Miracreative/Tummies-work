@@ -13,8 +13,8 @@ import CateringDetail from './Pages/CateringDetail/CateringDetail';
 // import ChooseLocation from './Pages/ChooseLocation/ChooseLocation';
 // import ApplyLocation from './Pages/ApplyLocation/ApplyLocation';
 // import FirstDay from './Pages/FirstDay/FirstDay';
-// import Auth from './Pages/Authentification/Auth';
-// import AuthConfirm from './Pages/AuthentificationConfirm/AuthentificationConfirm';
+import Auth from './Pages/Authentication/Auth';
+import AuthConfirm from './Pages/AuthenticationConfirm/AuthConfirm';
 // import DeliveryDetails from './Pages/DeliveryDetails/DeliveryDetails';
 // import Begin from './Pages/Begin/Begin';
 // import PersonalCabenet from './Pages/PersonalCabenet/PersonalCabent';
@@ -108,9 +108,16 @@ export default function Navigate() {
                 name="Catering"
                 component={Catering}
             />
-             <Stack.Screen
+            <Stack.Screen
                 name="CateringDetail"
                 component={CateringDetail}
+            />
+            <Stack.Screen
+                name="Auth"
+                component={Auth}/>
+            <Stack.Screen
+                name="AuthConfirm"
+                component={AuthConfirm}
             />
 
             {/* <Stack.Screen
@@ -154,10 +161,6 @@ export default function Navigate() {
              <Stack.Screen
                 name="ApplyLocation"
                 component={ApplyLocation}
-            />
-            <Stack.Screen
-                name="Auth"
-                component={Auth}
             />
 
             <Stack.Screen

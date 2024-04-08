@@ -29,11 +29,11 @@ export default function Main({ navigation}) {
 				<View style={{flex: 0.2, marginBottom: 20}}>
 					<BtnButton 
 					// onPress={() => {navigation.navigate('Account')}} 
-					onPress={() => console.log('Press')}
+					onPress={() => navigation.navigate("Auth")}
 					title={t('getStarted')} buttonStyle={{marginTop: 15, backgroundColor:"#FFFFFF"}} textStyle={{color: 'rgba(12, 3, 0, 1)'}} arrow={true} />
 					<BtnButton 
 					// onPress={() => navigation.navigate('Auth')} 
-					onPress={() => console.log('Press')}
+					onPress={() => navigation.navigate("Auth")}
 
 					title={t("logIn")} buttonStyle={{marginTop: 15, marginBottom: 20 }} textStyle={{color: '#FFFFFF'}}/>
 					
