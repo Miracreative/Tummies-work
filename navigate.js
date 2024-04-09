@@ -6,7 +6,7 @@ import CateringDetail from './Pages/CateringDetail/CateringDetail';
 // import i18next from './services/i18next';
 // import Name from './Pages/Name/Name';
 // import Email from './Pages/Email/Email';
-// import Gender from './Pages/Gender/Gender';
+import Gender from './Pages/Gender/Gender';
 // import Results from './Pages/Results/Results';
 // import Location from './Pages/Location/Location';
 // import AutoLocation from './Pages/AutoLocation/AutoLocation';
@@ -119,16 +119,17 @@ export default function Navigate() {
                 name="AuthConfirm"
                 component={AuthConfirm}
             />
+             <Stack.Screen
+                name="Gender"
+                component={Gender}
+            />
 
             {/* <Stack.Screen
                 name="Email"
                 component={Email}
             />
 
-            <Stack.Screen
-                name="Gender"
-                component={Gender}
-            />
+           
            
             <Stack.Screen
                 name="Name"
