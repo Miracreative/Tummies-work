@@ -2,6 +2,7 @@ const initialState = {language: 'en',
                         catering: {
                             number: ""
                         },
+                        changeMenu: true,
                         userInfo: {
                             currentAddress: 'non location',
                             latitude: 24.6877,
@@ -62,6 +63,18 @@ const reducer = (state = initialState, action) => {
                     language: 'en'
                 }
             }
+        case "CLOSEMENU": {
+            return {
+                ...state,
+                changeMenu: false
+            }
+        }
+        case "OPENMENU": {
+            return {
+                ...state,
+                changeMenu: true
+            }
+        }
         case "CATERING": {
             return {
                 ...state,

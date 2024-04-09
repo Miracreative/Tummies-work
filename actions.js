@@ -1,4 +1,6 @@
 export const langType = () => ({type: "LNG"});
+export const closeVisibleOnResults = () => ({type: "CLOSEMENU"});
+export const openVisibleOnResults = () => ({type: "OPENMENU"});
 export const catering = (phone) => ({type: "CATERING", payload: phone})
 export const addr = (place) => ({type: "LOCATION", payload: place});
 export const lat = (coord) => ({type: "LATITUDE", payload: coord});
