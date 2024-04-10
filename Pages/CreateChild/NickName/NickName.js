@@ -5,13 +5,13 @@ import 'react-native-gesture-handler';
 import { RFPercentage, RFValue } from "react-native-responsive-fontsize";
 import * as ImagePicker from 'expo-image-picker';
 import { DatePickerInput } from 'react-native-paper-dates';
-import { SafeAreaProvider } from "react-native-safe-area-context";
-import {nickName, currentHeightAction, currentWeightAction, photo1} from './../../actions';
+import { SafeAreaProvider } from 'react-native-safe-area-context';
+import {nickName, currentHeightAction, currentWeightAction, photo1} from './../../../actions';
 import { useDispatch, useSelector } from 'react-redux';
-import BtnButton from '../../Components/Button/Button';
-import {icons} from "../../constants";
-import Header from '../../Components/Header/Header';
-import styled from "./style.scss";
+import BtnButton from '../../../Components/Button/Button';
+import {icons} from '../../../constants';
+import Header from '../../../Components/Header/Header';
+import styled from './style.scss';
 export default function NickName({ navigation }) {
 
   //хук мультиязычности
@@ -119,7 +119,7 @@ export default function NickName({ navigation }) {
                                     </TouchableOpacity>
                                     <Text style={[styled.name__text, {fontSize: RFValue ( 20,  740)}]}>{t('name')}</Text>
                                     <TextInput
-                                  style={[styled.name__input, {borderColor: validName ? 'rgba(12, 3, 0, 0.5)' : 'rgba(245, 89, 38, 1)'}]}
+                                  style={[styled.name__input, {borderColor: validNickName ? 'rgba(12, 3, 0, 0.5)' : 'rgba(245, 89, 38, 1)'}]}
                                   onChangeText={text => validateName(text)}
                                   onFocus={() => {setIsShowKeyboard(true)}}
                                   value={name}

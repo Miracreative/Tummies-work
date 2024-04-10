@@ -7,11 +7,11 @@ import Results from './Pages/Results/Results';
 import Login from './Pages/Login/Login';
 import Registration from './Pages/Registration/Registration';
 // import i18next from './services/i18next';
-import Name from './Pages/Name/Name';
-import NickName from './Pages/NickName/NickName';
+import Name from './Pages/CreateChild/Name/Name';
+import NickName from './Pages/CreateChild/NickName/NickName';
+import Gender from './Pages/CreateChild/Gender/Gender';
 
-// import Email from './Pages/Email/Email';
-import Gender from './Pages/Gender/Gender';
+
 // import Results from './Pages/Results/Results';
 // import Location from './Pages/Location/Location';
 // import AutoLocation from './Pages/AutoLocation/AutoLocation';
@@ -96,7 +96,7 @@ export default function Navigate() {
     // console.log(i18next)
     return  <NavigationContainer>
         <Stack.Navigator
-            initialRouteName="Results"
+            initialRouteName="NickName"
             screenOptions={{
                 headerShown: false,
             }}>
@@ -120,9 +120,6 @@ export default function Navigate() {
                 name="Results"
                 component={Results}
             />
-            <Stack.Screen
-                name="Auth"
-                component={Auth}/>
             <Stack.Screen
               name="Login"
                 component={Login}/>
