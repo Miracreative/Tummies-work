@@ -2,7 +2,7 @@ const initialState = {language: 'en',
                         catering: {
                             number: ""
                         },
-                        changeMenu: true,
+                        changeMenu: false,
                         userInfo: {
                             currentAddress: 'non location',
                             latitude: 24.6877,
@@ -19,8 +19,11 @@ const initialState = {language: 'en',
                                 gender: '',
                                 name: '',
                                 lastName: '',
-                                age: 15,
+                                age: '',
                                 photo: '',
+                                nickName: '',
+                                currentWeigth: '',
+                                currentHeight: '',
                                 deliveryDetails: {
                                     area: '',
                                     building: '',
@@ -179,6 +182,39 @@ const reducer = (state = initialState, action) => {
                     }
                 }
             }
+        case 'NICK1':
+            return {
+                ...state,
+                childrens: {
+                    ...state.childrens,
+                    children1: {
+                        ...state.childrens.children1,
+                        nickName: action.payload
+                    }
+                }
+            }
+        case 'CHILDWEIGHT1':
+            return {
+                ...state,
+                childrens: {
+                    ...state.childrens,
+                    children1: {
+                        ...state.childrens.children1,
+                        currentWeight: action.payload
+                    }
+                }
+            }
+        case 'CHILDHEIGHT1':
+            return {
+                ...state,
+                childrens: {
+                    ...state.childrens,
+                    children1: {
+                        ...state.childrens.children1,
+                        currentHeight: action.payload
+                    }
+                }
+                }
         case 'SUM': 
             return {
                 ...state,

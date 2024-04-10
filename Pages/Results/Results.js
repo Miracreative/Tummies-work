@@ -103,7 +103,7 @@ export default function Results({ navigation }) {
                             />
                         <View style={{width: "100%", flex: 0.8, justifyContent:'center'}}>
                             <Text style={[styled.results__toStart, {fontSize: RFValue ( 20 ,  740)}]}>{t("menuAdd")}</Text>
-                            <BtnButton onPress={() => {console.log('add'); dispatch(closeVisibleOnResults())}} title={t('addAChild')} buttonStyle={{backgroundColor: '#F55926',borderWidth: 2, borderColor: '#F55926', marginBottom: 30}} textStyle={{color: 'rgba(244, 237, 225, 1)', }}/>
+                            <BtnButton onPress={() => {navigation.navigate("Gender"); dispatch(closeVisibleOnResults())}} title={t('addAChild')} buttonStyle={{backgroundColor: '#F55926',borderWidth: 2, borderColor: '#F55926', marginBottom: 30}} textStyle={{color: 'rgba(244, 237, 225, 1)', }}/>
                         </View>
                     </View> : null
                 }
@@ -155,7 +155,7 @@ export default function Results({ navigation }) {
                                 source={icons.bottomFone} />
                     </View>
                 </ScrollView>
-                <BtnButton onPress={() => {console.log('add')}} title={t('addAChild')} buttonStyle={{backgroundColor: '#F55926',borderWidth: 2, borderColor: '#F55926', marginBottom: 30}} textStyle={{color: 'rgba(244, 237, 225, 1)', }}/>
+                <BtnButton onPress={() => {navigation.navigate("Gender")}} title={t('addAChild')} buttonStyle={{backgroundColor: '#F55926',borderWidth: 2, borderColor: '#F55926', marginBottom: 30}} textStyle={{color: 'rgba(244, 237, 225, 1)', }}/>
             </SafeAreaView>
         </View>
     )

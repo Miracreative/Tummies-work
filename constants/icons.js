@@ -34,6 +34,7 @@ const doubleGexagon = require("./../assets/icons/double-gexaon.png")
 const backDown = require("./../assets/icons/backDown.png")
 const backFull = require("./../assets/icons/back-full.png")
 const backRedFull = require("./../assets/icons/back-red-full.png")
+const backSmall = require("./../assets/icons/back-small.png")
 const photoPhone = require("./../assets/icons/photo-phone.png")
 const visa = require("./../assets/icons/visa.png")
 const applePay = require("./../assets/icons/apple-pay.png")
@@ -93,6 +94,7 @@ export default {
     backDown,
     backFull,
     backRedFull,
+    backSmall,
     photoPhone,
     visa,
     applePay,
