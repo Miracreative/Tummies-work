@@ -3,6 +3,8 @@ import Main from './Pages/Main/Main';
 import Entertaiment from './Pages/Entertaiment/Entertaiment';
 import Catering from './Pages/Catering/Catering';
 import CateringDetail from './Pages/CateringDetail/CateringDetail';
+import Login from './Pages/Login/Login';
+import Registration from './Pages/Registration/Registration';
 // import i18next from './services/i18next';
 // import Name from './Pages/Name/Name';
 // import Email from './Pages/Email/Email';
@@ -13,8 +15,6 @@ import CateringDetail from './Pages/CateringDetail/CateringDetail';
 // import ChooseLocation from './Pages/ChooseLocation/ChooseLocation';
 // import ApplyLocation from './Pages/ApplyLocation/ApplyLocation';
 // import FirstDay from './Pages/FirstDay/FirstDay';
-import Auth from './Pages/Authentication/Auth';
-import AuthConfirm from './Pages/AuthenticationConfirm/AuthConfirm';
 // import DeliveryDetails from './Pages/DeliveryDetails/DeliveryDetails';
 // import Begin from './Pages/Begin/Begin';
 // import PersonalCabenet from './Pages/PersonalCabenet/PersonalCabent';
@@ -22,6 +22,7 @@ import AuthConfirm from './Pages/AuthenticationConfirm/AuthConfirm';
 
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
+
 
 // import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 
@@ -113,11 +114,11 @@ export default function Navigate() {
                 component={CateringDetail}
             />
             <Stack.Screen
-                name="Auth"
-                component={Auth}/>
+                name="Login"
+                component={Login}/>
             <Stack.Screen
-                name="AuthConfirm"
-                component={AuthConfirm}
+                name="Registration"
+                component={Registration}
             />
 
             {/* <Stack.Screen
