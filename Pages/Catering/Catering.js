@@ -8,6 +8,7 @@ import {catering} from './../../actions';
 import { useDispatch} from 'react-redux';
 
 import Header from '../../Components/Header/Header';
+import Spinner from '../../Components/Spinner/Spinner';
 import axios from 'axios';
 
 
@@ -55,7 +56,7 @@ export default function Catering({ navigation}) {
     });
   
   return (
-	
+    // <Spinner active={true}/>
     <View style={styled.container}>
         <SafeAreaView style={{flex:1}}>
             <Header onPress={() => navigation.goBack()} 

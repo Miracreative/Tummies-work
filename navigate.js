@@ -3,12 +3,15 @@ import Main from './Pages/Main/Main';
 import Entertaiment from './Pages/Entertaiment/Entertaiment';
 import Catering from './Pages/Catering/Catering';
 import CateringDetail from './Pages/CateringDetail/CateringDetail';
+import Results from './Pages/Results/Results';
 import Login from './Pages/Login/Login';
 import Registration from './Pages/Registration/Registration';
 // import i18next from './services/i18next';
-// import Name from './Pages/Name/Name';
+import Name from './Pages/Name/Name';
+import NickName from './Pages/NickName/NickName';
+
 // import Email from './Pages/Email/Email';
-// import Gender from './Pages/Gender/Gender';
+import Gender from './Pages/Gender/Gender';
 // import Results from './Pages/Results/Results';
 // import Location from './Pages/Location/Location';
 // import AutoLocation from './Pages/AutoLocation/AutoLocation';
@@ -93,7 +96,7 @@ export default function Navigate() {
     // console.log(i18next)
     return  <NavigationContainer>
         <Stack.Navigator
-            // initialRouteName="Main"
+            initialRouteName="Results"
             screenOptions={{
                 headerShown: false,
             }}>
@@ -114,11 +117,30 @@ export default function Navigate() {
                 component={CateringDetail}
             />
             <Stack.Screen
-                name="Login"
+                name="Results"
+                component={Results}
+            />
+            <Stack.Screen
+                name="Auth"
+                component={Auth}/>
+            <Stack.Screen
+              name="Login"
                 component={Login}/>
             <Stack.Screen
                 name="Registration"
                 component={Registration}
+            />
+             <Stack.Screen
+                name="Gender"
+                component={Gender}
+            />
+            <Stack.Screen
+                name="Name"
+                component={Name}
+            />
+            <Stack.Screen
+                name="NickName"
+                component={NickName}
             />
 
             {/* <Stack.Screen
@@ -126,15 +148,9 @@ export default function Navigate() {
                 component={Email}
             />
 
-            <Stack.Screen
-                name="Gender"
-                component={Gender}
-            />
            
-            <Stack.Screen
-                name="Name"
-                component={Name}
-            />
+           
+           
 
             <Stack.Screen
                 name="Results"
