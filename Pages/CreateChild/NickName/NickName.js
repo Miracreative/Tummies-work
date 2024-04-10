@@ -5,13 +5,13 @@ import 'react-native-gesture-handler';
 import { RFPercentage, RFValue } from "react-native-responsive-fontsize";
 import * as ImagePicker from 'expo-image-picker';
 import { DatePickerInput } from 'react-native-paper-dates';
-import { SafeAreaProvider } from "react-native-safe-area-context";
-import {nickName, currentHeightAction, currentWeightAction, photo1} from './../../actions';
+import { SafeAreaProvider } from 'react-native-safe-area-context';
+import {nickName, currentHeightAction, currentWeightAction, photo1} from './../../../actions';
 import { useDispatch, useSelector } from 'react-redux';
-import BtnButton from '../../Components/Button/Button';
-import {icons} from "../../constants";
-import Header from '../../Components/Header/Header';
-import styled from "./style.scss";
+import BtnButton from '../../../Components/Button/Button';
+import {icons} from '../../../constants';
+import Header from '../../../Components/Header/Header';
+import styled from './style.scss';
 export default function NickName({ navigation }) {
 
   //хук мультиязычности

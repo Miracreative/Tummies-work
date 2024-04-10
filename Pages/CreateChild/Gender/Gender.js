@@ -3,12 +3,12 @@ import { Text, View, Image, TouchableOpacity, SafeAreaView,ImageBackground} from
 import {useTranslation} from 'react-i18next';
 import 'react-native-gesture-handler';
 import { RFPercentage, RFValue } from "react-native-responsive-fontsize";
-import {gen1} from './../../actions';
+import {gen1} from './../../../actions';
 import { useDispatch} from 'react-redux';
-import BtnButton from '../../Components/Button/Button';
-import {icons} from "../../constants";
-import Header from '../../Components/Header/Header';
-import styled from "./style.scss"; 
+import BtnButton from '../../../Components/Button/Button';
+import {icons} from '../../../constants';
+import Header from '../../../Components/Header/Header';
+import styled from './style.scss'; 
 export default function Gender({ navigation }) {
 
   let {t} = useTranslation();
