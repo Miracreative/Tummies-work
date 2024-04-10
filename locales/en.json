@@ -84,5 +84,8 @@
     "whatsIncluded": "What's included",
     "menuAdd": "To start changing the menu-add your child and sign up",
     "nickStart": "What's",
-    "nickEnd": "'s nickname ?"
+    "nickEnd": "'s nickname ?",
+    "currentWeight": "Current weight?",
+    "currentHeight": "Current height?"
+
 }

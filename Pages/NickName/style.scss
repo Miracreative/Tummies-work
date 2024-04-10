@@ -84,6 +84,13 @@
             overflow: hidden;
         }
     }
+    &__divider {
+        width: 94%;
+        height: 1px;
+        background-color: #0C0300;
+        opacity: .2;
+        margin: 0 auto 20px;
+    }
 }
 .container {
     flex: 1;
