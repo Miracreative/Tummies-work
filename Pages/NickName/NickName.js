@@ -20,12 +20,13 @@ export default function NickName({ navigation }) {
   // вытаскиваем из редакса глобальные переменные, сведения на ребенка
   const childName = useSelector(state => state.childrens.children1.name);
   const gender = useSelector(state => state.childrens.children1.gender);
+  const name = useSelector(state => state.childrens.children1.name);
   const photo =   useSelector(state => state.childrens.children1.photo);
 
   //локальные состояния
   const [nickName, setNickName] = useState('');
   const [validNickName, setValidNickName] = useState(true);
-  const [weigth, setWeight] = useState(null);
+  const [weight, setWeight] = useState(null);
   const [height, setHeight] = useState(null);
   const [disable, setDisable] = useState(true);
   const [image, setImage] = useState(photo);
@@ -37,12 +38,12 @@ export default function NickName({ navigation }) {
 
 
 
-  const validateName = (text) => {
+  const validateNickName = (text) => {
     setNickName(text)
     if (text.length >=2) {
       //если валидация прошла
       setValidNickName(true)
-      if( nickName.length >=2 && weigth && height) {
+      if( nickName.length >=2 && weight && height) {
       //и остальные инпуты заполнены разблокируем кнопку далее
         setDisable(false)
       }  
@@ -54,7 +55,7 @@ export default function NickName({ navigation }) {
   }
   const validateWeight = (text) => {
     setWeight(text)
-    if( nickName.length >=2 && weigth && height) {
+    if( nickName.length >=2 && weight && height) {
       //и остальные инпуты заполнены разблокируем кнопку далее
         setDisable(false)
     } else {
@@ -65,7 +66,7 @@ export default function NickName({ navigation }) {
 
   const validateHeight = (text) => {
     setHeight(text)
-    if( nickName.length >=2 && weigth && height) {
+    if( nickName.length >=2 && weight && height) {
       //и остальные инпуты заполнены разблокируем кнопку далее
         setDisable(false)
     } else {
@@ -117,23 +118,25 @@ export default function NickName({ navigation }) {
                                             }
                                         </ImageBackground>
                                     </TouchableOpacity>
-                                    <Text style={[styled.name__text, {fontSize: RFValue ( 20,  740)}]}>{t('name')}</Text>
+                                    <Text style={[styled.name__text, {fontSize: RFValue ( 20,  740)}]}>{t('nickStart')} {name}{t('nickEnd')} </Text>
                                     <TextInput
-                                  style={[styled.name__input, {borderColor: validName ? 'rgba(12, 3, 0, 0.5)' : 'rgba(245, 89, 38, 1)'}]}
-                                  onChangeText={text => validateName(text)}
+                                  style={[styled.name__input, {borderColor: validNickName ? 'rgba(12, 3, 0, 0.5)' : 'rgba(245, 89, 38, 1)'}]}
+                                  onChangeText={text => validateNickName(text)}
                                   onFocus={() => {setIsShowKeyboard(true)}}
-                                  value={name}
+                                  value={nickName}
                                   onSubmitEditing={() => {Keyboard.dismiss(); setIsShowKeyboard(false) }}
-                              />
-                            <Text style={[styled.name__text, {fontSize: RFValue ( 20,  740)}]}>{t('lastName')}</Text>
-                            <TextInput
-                                  style={[styled.name__input, {borderColor: validLastName ? 'rgba(12, 3, 0, 0.5)' : 'rgba(245, 89, 38, 1)'}]}
-                                  onChangeText={text => {validateLastName(text)}}
-                                  onFocus={() => {setIsShowKeyboard(true)}}
-                                  value={lastName}
-                                  onSubmitEditing={() => {Keyboard.dismiss(); setIsShowKeyboard(false) }}
-                              />
-                            <Text style={[styled.name__text, {fontSize: RFValue ( 20,  740)}]}>{t('age')}</Text>
+                              	/>
+                    			<View style={styled.name__divider}></View>
+
+								<Text style={[styled.name__text, {fontSize: RFValue ( 20,  740)}]}>{t('currentWeight')}</Text>
+								<TextInput
+									style={[styled.name__input]}
+									onChangeText={text => {validateNickName(text)}}
+									onFocus={() => {setIsShowKeyboard(true)}}
+									value={weight}
+									onSubmitEditing={() => {Keyboard.dismiss(); setIsShowKeyboard(false) }}
+								/>
+                            {/* <Text style={[styled.name__text, {fontSize: RFValue ( 20,  740)}]}>{t('age')}</Text>
                                 <SafeAreaProvider>
                                 <View style={[styled.name__input_name, {borderColor: validAge ? 'rgba(12, 3, 0, 0.5)' : 'rgba(245, 89, 38, 1)'}]}>
                                     <DatePickerInput
@@ -143,18 +146,18 @@ export default function NickName({ navigation }) {
                                         onChange={(d) => {setAge(d);}}
                                         inputMode="start"
                                     />
-                                </View>
-                                </SafeAreaProvider>
+                                </View> */}
+                                {/* </SafeAreaProvider> */}
                                 </ScrollView>
                             </View>
                       </TouchableWithoutFeedback>
-                      <BtnButton onPress={() => {dispatch(name1(name))
+                      {/* <BtnButton onPress={() => {dispatch(name1(name))
                                           dispatch(lastName1(lastName))
                                           dispatch(age1(age))
                                           dispatch(photo1(image))
                                           setIsShowKeyboard(false)
                                           Keyboard.dismiss
-                                          navigation.navigate("NickName")}} title={t('next')} buttonStyle={{backgroundColor: '#F55926',borderWidth: 2, borderColor: '#F55926', marginBottom: 30, opacity: (disable) ? .7 : 1, pointerEvents: (disable) ? 'none' : 'auto'}} textStyle={{color: 'rgba(244, 237, 225, 1)', }}/>
+                                          navigation.navigate("NickName")}} title={t('next')} buttonStyle={{backgroundColor: '#F55926',borderWidth: 2, borderColor: '#F55926', marginBottom: 30, opacity: (disable) ? .7 : 1, pointerEvents: (disable) ? 'none' : 'auto'}} textStyle={{color: 'rgba(244, 237, 225, 1)', }}/> */}
                     </SafeAreaView>
           </ImageBackground>
         </View>
