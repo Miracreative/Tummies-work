@@ -3,7 +3,7 @@ import { Text, View, SafeAreaView, ImageBackground, ScrollView} from 'react-nati
 import {useTranslation} from 'react-i18next';
 import 'react-native-gesture-handler';
 import { RFPercentage, RFValue } from "react-native-responsive-fontsize";
-// import {currentNickName} from './../../../actions';
+import {addActivities} from './../../../actions';
 import { useDispatch, useSelector } from 'react-redux';
 import BtnButton from '../../../Components/Button/Button';
 import {icons} from '../../../constants';
@@ -47,9 +47,23 @@ export default function Activities({ navigation }) {
         }
     ]
 
+    //массив, в который будут добавляться выбранные виды активностей
+    const [activitiesList, setActivitiesList] = useState([]);
+
+    const getActivitiesArray = (text, active) => {
+        if(!active) {
+            //здесь мы добавляем жлементы в массив
+            setActivitiesList(activitiesList => [ text, ...activitiesList])
+        } else {
+            //здесь удаляем элементы
+            setActivitiesList(activitiesList => activitiesList.filter((item) => item !== text))
+        }
+    }
+
+        //формируем массив иконок, выводимых на экран страницы
     const activities = activityTypesArray.map((item, i) => {
         return (
-            <Icon key={i} {...item} />
+            <Icon key={i} {...item} getActivitiesArray={getActivitiesArray} />
         )
     })
 
@@ -68,14 +82,12 @@ return (
 
                                 <View style={styled.active__container}>
                                     {activities}
-
                                 </View>
                             </ScrollView>
                         </View>
                     <BtnButton onPress={() => {
-                                        // dispatch(currentHeightAction(height))
-                                        // dispatch(photo1(image))
-                                        navigation.navigate("Activities")}} title={t('next')} buttonStyle={{backgroundColor: '#F55926',borderWidth: 2, borderColor: '#F55926', marginBottom: 30, opacity: 1,}} textStyle={{color: 'rgba(244, 237, 225, 1)', }}/>
+                                        dispatch(addActivities(activitiesList))
+                                        navigation.navigate("NotEat")}} title={t('next')} buttonStyle={{backgroundColor: '#F55926',borderWidth: 2, borderColor: '#F55926', marginBottom: 30, opacity: 1,}} textStyle={{color: 'rgba(244, 237, 225, 1)', }}/>
                 </SafeAreaView>
         </ImageBackground>
     </View>

@@ -62,6 +62,14 @@ const swimming = require("./../assets/icons/swimming.png");
 const dancing = require("./../assets/icons/dancing.png");
 const reading = require("./../assets/icons/reading.png");
 const programming = require("./../assets/icons/programming.png");
+const fish = require("./../assets/icons/fish.png");
+const beef = require("./../assets/icons/beef.png");
+const seafoods = require("./../assets/icons/seafoods.png")  
+const chicken = require("./../assets/icons/chicken.png")
+const broccaly = require("./../assets/icons/broccaly.png") 
+const eggs = require("./../assets/icons/eggs.png")
+const shugar = require("./../assets/icons/shugar.png")
+const bread = require("./../assets/icons/bread.png")
 
 
 
@@ -129,5 +137,13 @@ export default {
     swimming,
     dancing,
     reading,
-    programming
+    programming,
+    fish,
+    beef,
+    seafoods,
+    chicken,
+    broccaly,
+    eggs,
+    shugar,
+    bread
 }
