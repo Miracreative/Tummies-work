@@ -1,8 +1,8 @@
-import { height } from "deprecated-react-native-prop-types/DeprecatedImagePropType";
-
 export const langType = () => ({type: "LNG"});
 export const closeVisibleOnResults = () => ({type: "CLOSEMENU"});
 export const openVisibleOnResults = () => ({type: "OPENMENU"});
+export const addActivities = (activities) => ({type: "ADDACT", payload: activities});
+export const addAllergies = (food) => ({type: "ADDFOOD", payload: food});
 export const catering = (phone) => ({type: "CATERING", payload: phone})
 export const addr = (place) => ({type: "LOCATION", payload: place});
 export const lat = (coord) => ({type: "LATITUDE", payload: coord});
@@ -12,7 +12,7 @@ export const name1 = (name) => ({type: "NAME1", payload: name});
 export const lastName1 = (lastname) => ({type: "LASTNAME1", payload: lastname});
 export const photo1 = (uri) => ({type: "PHOTO1", payload: uri});
 export const age1 = (age) => ({type: "AGE1", payload: age});
-export const nickName = (nick) => ({type: "NICK1", payload: nick});
+export const currentNickName = (nick) => ({type: "NICK1", payload: nick});
 export const currentHeightAction = (height) => ({type: "CHILDHEIGHT1", payload: height});
 export const currentWeightAction = (weight) => ({type: "CHILDWEIGHT1", payload: weight});
 export const favoriteHeroAction = (text) => ({type: "FAVORITEHEROES1", payload: text});

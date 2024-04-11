@@ -90,6 +90,22 @@
     "favoriteHeroesStart": "What are ",
     "favoriteHeroesEnd": "'s favorite heroes?",
     "favoriteFood": "'s favorite food",
-    "orderPackage": "Order package"
+    "orderPackage": "Order package",
+    "activities": "What is your activities?",
+    "running": "Running",
+    "soccer": "Soccer",
+    "swimming": "Swimming",
+    "dancing": "Dancing",
+    "reading": "Reading",
+    "programming": "Programming",
+    "fish": "Fish",
+    "beef": "Beef",
+    "seafoods": "Seafoods",
+    "chicken": "Chicken",
+    "broccaly": "Broccoli",
+    "eggs": "Eggs",
+    "shugar": "Shugar",
+    "bread": "Bread",
+    "eat": "What do you not eat?"
 
 }

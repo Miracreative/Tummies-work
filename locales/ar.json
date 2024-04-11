@@ -90,5 +90,23 @@
     "favoriteHeroesStart": "أبطال المفضلة?",
     "favoriteHeroesEnd": "ما هي",
     "favoriteFood": "الطعام المفضل",
-    "orderPackage": "حزمة الطلب"
+    "orderPackage": "حزمة الطلب",
+    "currentHeight": "الإرتفاع الحالي؟",
+    "activities": "ما هي نشاطاتك؟",
+    "running": "جري",
+    "soccer": "كرة القدم",
+    "swimming": "سباحة",
+    "dancing": "الرقص",
+    "reading": "قراءة",
+    "programming": "برمجة",
+    "fish": "سمكة",
+    "beef": "لحم",
+    "seafoods": "المأكولات البحرية",
+    "chicken": "فرخة",
+    "broccaly":  "بروكلي",
+    "eggs": "بيض",
+    "shugar": "شوغار",
+    "bread": "خبز",
+    "eat": "ماذا لا تأكل؟"
+
 }
