@@ -86,5 +86,9 @@
     "menuAdd": "لبدء تغيير القائمة، أضف طفلك وقم بالتسجيل",
     "nickStart": "كنية ؟",
     "nickEnd": "ما هو",
-    "currentWeight": "الوزن الحالي؟"
+    "currentWeight": "الوزن الحالي؟",
+    "favoriteHeroesStart": "أبطال المفضلة?",
+    "favoriteHeroesEnd": "ما هي",
+    "favoriteFood": "الطعام المفضل",
+    "orderPackage": "حزمة الطلب"
 }

@@ -86,6 +86,10 @@
     "nickStart": "What's",
     "nickEnd": "'s nickname ?",
     "currentWeight": "Current weight?",
-    "currentHeight": "Current height?"
+    "currentHeight": "Current height?",
+    "favoriteHeroesStart": "What are ",
+    "favoriteHeroesEnd": "'s favorite heroes?",
+    "favoriteFood": "'s favorite food",
+    "orderPackage": "Order package"
 
 }
