@@ -24,6 +24,8 @@ const initialState = {language: 'en',
                                 nickName: '',
                                 currentWeigth: '',
                                 currentHeight: '',
+                                favoriteHeroes: '',
+                                favoriteFood: '',
                                 activities: '',
                                 allergies:'',
                                 deliveryDetails: {
@@ -238,6 +240,28 @@ const reducer = (state = initialState, action) => {
                     children1: {
                         ...state.childrens.children1,
                         currentHeight: action.payload
+                    }
+                }
+                }
+        case 'FAVORITEHEROES1':
+            return {
+                ...state,
+                childrens: {
+                    ...state.childrens,
+                    children1: {
+                        ...state.childrens.children1,
+                        favoriteHeroes: action.payload
+                    }
+                }
+                }
+        case 'FAVORITEFOOD1':
+            return {
+                ...state,
+                childrens: {
+                    ...state.childrens,
+                    children1: {
+                        ...state.childrens.children1,
+                        favoriteFood: action.payload
                     }
                 }
                 }
