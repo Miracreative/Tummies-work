@@ -54,6 +54,14 @@ const entertaimentMenuActive = require("./../assets/icons/entertaiment-menu-acti
 const cateringMenuActive = require("./../assets/icons/catering-menu-active.png")
 const plug = require("./../assets/icons/plug.png")
 const play = require("./../assets/icons/play.png")
+const iconBackgroundWhite = require("./../assets/icons/iconAreaWhite.png")
+const running = require("./../assets/icons/running.png")
+const lightGexagon = require("./../assets/icons/light-gexagon.png")
+const soccer = require("./../assets/icons/soccer.png")
+const swimming = require("./../assets/icons/swimming.png");
+const dancing = require("./../assets/icons/dancing.png");
+const reading = require("./../assets/icons/reading.png");
+const programming = require("./../assets/icons/programming.png");
 
 
 
@@ -113,5 +121,13 @@ export default {
     entertaimentMenuActive,
     cateringMenuActive,
     plug,
-    play
+    play,
+    iconBackgroundWhite,
+    running,
+    lightGexagon,
+    soccer,
+    swimming,
+    dancing,
+    reading,
+    programming
 }

@@ -86,6 +86,13 @@
     "nickStart": "What's",
     "nickEnd": "'s nickname ?",
     "currentWeight": "Current weight?",
-    "currentHeight": "Current height?"
+    "currentHeight": "Current height?",
+    "activities": "What is your activities?",
+    "running": "Running",
+    "soccer": "Soccer",
+    "swimming": "Swimming",
+    "dancing": "Dancing",
+    "reading": "Reading",
+    "programming": "Programming"
 
 }
