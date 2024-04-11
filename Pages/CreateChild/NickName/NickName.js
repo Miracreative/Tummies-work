@@ -4,9 +4,7 @@ import {useTranslation} from 'react-i18next';
 import 'react-native-gesture-handler';
 import { RFPercentage, RFValue } from "react-native-responsive-fontsize";
 import * as ImagePicker from 'expo-image-picker';
-import { DatePickerInput } from 'react-native-paper-dates';
-import { SafeAreaProvider } from 'react-native-safe-area-context';
-import {nickName, currentHeightAction, currentWeightAction, photo1} from './../../../actions';
+import {currentNickName, currentHeightAction, currentWeightAction, photo1} from './../../../actions';
 import { useDispatch, useSelector } from 'react-redux';
 import BtnButton from '../../../Components/Button/Button';
 import {icons} from '../../../constants';
@@ -54,7 +52,8 @@ export default function NickName({ navigation }) {
     }
   }
   const validateWeight = (text) => {
-    setWeight(text)
+	const value = text.replace(/\D+/g, '');
+    setWeight(value)
     if( nickName.length >=2 && weight && height) {
       //и остальные инпуты заполнены разблокируем кнопку далее
         setDisable(false)
@@ -65,7 +64,8 @@ export default function NickName({ navigation }) {
   }
 
   const validateHeight = (text) => {
-    setHeight(text)
+	const value = text.replace(/\D+/g, '');
+    setHeight(+value)
     if( nickName.length >=2 && weight && height) {
       //и остальные инпуты заполнены разблокируем кнопку далее
         setDisable(false)
@@ -89,11 +89,6 @@ export default function NickName({ navigation }) {
     }
   };
   return (
-
-    <KeyboardAvoidingView
-    behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
-      style={{flex: 1}}
-      >
         <View style={styled.container}>
             <ImageBackground
                 resizeMode='cover'
@@ -118,7 +113,7 @@ export default function NickName({ navigation }) {
                                             }
                                         </ImageBackground>
                                     </TouchableOpacity>
-                                    <Text style={[styled.name__text, {fontSize: RFValue ( 20,  740)}]}>{t('nickStart')} {name}{t('nickEnd')} </Text>
+                                    <Text style={[styled.name__text, {fontSize: RFValue ( 20,  740)}]}>{t('nickStart')} {childName}{t('nickEnd')} </Text>
                                     <TextInput
                                   style={[styled.name__input, {borderColor: validNickName ? 'rgba(12, 3, 0, 0.5)' : 'rgba(245, 89, 38, 1)'}]}
                                   onChangeText={text => validateNickName(text)}
@@ -131,37 +126,36 @@ export default function NickName({ navigation }) {
 								<Text style={[styled.name__text, {fontSize: RFValue ( 20,  740)}]}>{t('currentWeight')}</Text>
 								<TextInput
 									style={[styled.name__input]}
-									onChangeText={text => {validateNickName(text)}}
+									type="numeric"
+									keyboardType = 'numeric'
+									onChangeText={text => {validateWeight(text)}}
 									onFocus={() => {setIsShowKeyboard(true)}}
 									value={weight}
 									onSubmitEditing={() => {Keyboard.dismiss(); setIsShowKeyboard(false) }}
 								/>
-                            {/* <Text style={[styled.name__text, {fontSize: RFValue ( 20,  740)}]}>{t('age')}</Text>
-                                <SafeAreaProvider>
-                                <View style={[styled.name__input_name, {borderColor: validAge ? 'rgba(12, 3, 0, 0.5)' : 'rgba(245, 89, 38, 1)'}]}>
-                                    <DatePickerInput
-                                        style={{backgroundColor: 'transparent', border: 'none', margin: 0}}
-                                        locale="en"
-                                        value={age}
-                                        onChange={(d) => {setAge(d);}}
-                                        inputMode="start"
-                                    />
-                                </View> */}
-                                {/* </SafeAreaProvider> */}
+								
+								<Text style={[styled.name__text, {fontSize: RFValue ( 20,  740)}]}>{t('currentHeight')}</Text>
+								<TextInput
+									style={[styled.name__input]}
+									type="numeric"
+									keyboardType = 'numeric'
+									onChangeText={text => {validateHeight(text)}}
+									onFocus={() => {setIsShowKeyboard(true)}}
+									value={height}
+									onSubmitEditing={() => {Keyboard.dismiss(); setIsShowKeyboard(false) }}
+								/>
                                 </ScrollView>
                             </View>
                       </TouchableWithoutFeedback>
-                      {/* <BtnButton onPress={() => {dispatch(name1(name))
-                                          dispatch(lastName1(lastName))
-                                          dispatch(age1(age))
+                      <BtnButton onPress={() => {dispatch(currentNickName(nickName))
+                                          dispatch(currentWeightAction(weight))
+                                          dispatch(currentHeightAction(height))
                                           dispatch(photo1(image))
                                           setIsShowKeyboard(false)
                                           Keyboard.dismiss
-                                          navigation.navigate("NickName")}} title={t('next')} buttonStyle={{backgroundColor: '#F55926',borderWidth: 2, borderColor: '#F55926', marginBottom: 30, opacity: (disable) ? .7 : 1, pointerEvents: (disable) ? 'none' : 'auto'}} textStyle={{color: 'rgba(244, 237, 225, 1)', }}/> */}
+                                          navigation.navigate("Activities")}} title={t('next')} buttonStyle={{backgroundColor: '#F55926',borderWidth: 2, borderColor: '#F55926', marginBottom: 30, opacity: (disable) ? .7 : 1, pointerEvents: (disable) ? 'none' : 'auto'}} textStyle={{color: 'rgba(244, 237, 225, 1)', }}/>
                     </SafeAreaView>
           </ImageBackground>
         </View>
-        
-    </KeyboardAvoidingView>
   );
 }

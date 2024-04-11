@@ -86,5 +86,13 @@
     "menuAdd": "لبدء تغيير القائمة، أضف طفلك وقم بالتسجيل",
     "nickStart": "كنية ؟",
     "nickEnd": "ما هو",
-    "currentWeight": "الوزن الحالي؟"
+    "currentWeight": "الوزن الحالي؟",
+    "currentHeight": "الإرتفاع الحالي؟",
+    "activities": "ما هي نشاطاتك؟",
+    "running": "جري",
+    "soccer": "كرة القدم",
+    "swimming": "سباحة",
+    "dancing": "الرقص",
+    "reading": "قراءة",
+    "programming": "برمجة"
 }
