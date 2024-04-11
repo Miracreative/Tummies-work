@@ -24,6 +24,8 @@ const initialState = {language: 'en',
                                 nickName: '',
                                 currentWeigth: '',
                                 currentHeight: '',
+                                activities: '',
+                                allergies:'',
                                 deliveryDetails: {
                                     area: '',
                                     building: '',
@@ -66,6 +68,30 @@ const reducer = (state = initialState, action) => {
                     language: 'en'
                 }
             }
+        case 'ADDACT': {
+            return {
+                ...state,
+                childrens: {
+                    ...state.childrens,
+                    children1: {
+                        ...state.childrens.children1,
+                        activities: action.payload
+                    }
+                }
+            }
+        }
+        case 'ADDFOOD': {
+            return {
+                ...state,
+                childrens: {
+                    ...state.childrens,
+                    children1: {
+                        ...state.childrens.children1,
+                        allergies: action.payload
+                    }
+                }
+            }
+        }
         case "CLOSEMENU": {
             return {
                 ...state,

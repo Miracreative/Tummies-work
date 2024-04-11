@@ -46,6 +46,7 @@ export default function Results({ navigation }) {
     const [active, setActive] = useState(0);
     const [activeMeal, setActiveMeal] = useState(0);
 
+
     const elements = days.map((item, i) => {
   
         return (

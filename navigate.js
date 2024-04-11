@@ -11,6 +11,7 @@ import Name from './Pages/CreateChild/Name/Name';
 import NickName from './Pages/CreateChild/NickName/NickName';
 import Gender from './Pages/CreateChild/Gender/Gender';
 import Activities from './Pages/CreateChild/Activities/Activities';
+import NotEat from './Pages/CreateChild/NotEat/NotEat';
 
 // import Results from './Pages/Results/Results';
 // import Location from './Pages/Location/Location';
@@ -142,6 +143,10 @@ export default function Navigate() {
             <Stack.Screen
                 name="Activities"
                 component={Activities}
+            />
+            <Stack.Screen
+                name="NotEat"
+                component={NotEat}
             />
 
             {/* <Stack.Screen

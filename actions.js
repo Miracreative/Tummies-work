@@ -1,8 +1,8 @@
-import { height } from "deprecated-react-native-prop-types/DeprecatedImagePropType";
-
 export const langType = () => ({type: "LNG"});
 export const closeVisibleOnResults = () => ({type: "CLOSEMENU"});
 export const openVisibleOnResults = () => ({type: "OPENMENU"});
+export const addActivities = (activities) => ({type: "ADDACT", payload: activities});
+export const addAllergies = (food) => ({type: "ADDFOOD", payload: food});
 export const catering = (phone) => ({type: "CATERING", payload: phone})
 export const addr = (place) => ({type: "LOCATION", payload: place});
 export const lat = (coord) => ({type: "LATITUDE", payload: coord});
