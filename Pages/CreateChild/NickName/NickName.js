@@ -108,7 +108,7 @@ export default function NickName({ navigation }) {
                                         resizeMode='contain'
                                             style={{ width: 120, height: 120}}
                                             source={icons.photoPhone} >
-                                            {image? <Image source={{ uri: image }} style={{ width: 90, height: 90, borderRadius: 100, marginTop: 17, marginLeft: 13, borderWidth: 2, borderColor: 'white', borderStyle: 'solid' }} /> :
+                                            {image? <Image source={{ uri: image }} style={{ width: 90, height: 90, borderRadius: 100, marginTop: 17, marginLeft: 13, borderWidth: 2, borderColor: 'white'}} /> :
                                             <Image source={gender == 'boy' ? icons.boyRing : icons.girlRing} style={{ width: 90, height: 90, borderRadius: 100, marginTop: 17, marginLeft: 13 }} />
                                             }
                                         </ImageBackground>
