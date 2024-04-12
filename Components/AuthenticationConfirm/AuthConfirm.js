@@ -61,12 +61,12 @@ export default function AuthConfirm({ navigation, sendCodeToPhoneNumber, bottomB
   // }
 
   return (
-    <ScrollView>
+    <View style={{flex: 1}}> 
       <SafeAreaView style={styled.auth}>
         <View style={styled.wrapper}>
           <Header onPress={() => navigation.navigate("Main")} isWhite={false} />
         </View>
-        <KeyboardAvoidingView
+        <ScrollView
           // behavior={Platform.OS =='ios' ? "padding" : "height"}
           style={{ position: "relative" }}
         >
@@ -123,6 +123,7 @@ export default function AuthConfirm({ navigation, sendCodeToPhoneNumber, bottomB
             </TouchableOpacity>
             <BtnButton
               onPress={() => {
+                navigation.navigate("Results")
                 confirmCode();
               }}
               title={t("logIn")}
@@ -131,8 +132,8 @@ export default function AuthConfirm({ navigation, sendCodeToPhoneNumber, bottomB
             />
             <BtnButton onPress={() => navigation.navigate(bottomBtn.navigateTo)} title={t(bottomBtn.title)} buttonStyle={{ marginTop: isShowKeyboard ? 5 : 15, marginBottom: isShowKeyboard ? 5 : 20 }} textStyle={{ color: "black" }} />
           </View>
-        </KeyboardAvoidingView>
+        </ScrollView>
       </SafeAreaView>
-    </ScrollView>
+    </View>
   );
 }

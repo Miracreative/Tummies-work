@@ -4,8 +4,6 @@ import {useTranslation} from 'react-i18next';
 import 'react-native-gesture-handler';
 import { RFPercentage, RFValue } from "react-native-responsive-fontsize";
 import * as ImagePicker from 'expo-image-picker';
-import { DatePickerInput } from 'react-native-paper-dates';
-import { SafeAreaProvider } from 'react-native-safe-area-context';
 import {favoriteHeroAction, favoriteFoodAction, photo1} from '../../../actions';
 import { useDispatch, useSelector } from 'react-redux';
 import BtnButton from '../../../Components/Button/Button';
@@ -74,7 +72,7 @@ export default function NickName({ navigation }) {
                               resizeMode='contain'
                               style={{ width: 120, height: 120}}
                               source={icons.photoPhone} >
-                              {image? <Image source={{ uri: image }} style={{ width: 90, height: 90, borderRadius: 100, marginTop: 17, marginLeft: 13, borderWidth: 2, borderColor: 'white', borderStyle: 'solid' }} /> :
+                              {image? <Image source={{ uri: image }} style={{ width: 90, height: 90, borderRadius: 100, marginTop: 17, marginLeft: 13, borderWidth: 2, borderColor: 'white'}} /> :
                               <Image source={gender == 'boy' ? icons.boyRing : icons.girlRing} style={{ width: 90, height: 90, borderRadius: 100, marginTop: 17, marginLeft: 13 }} />
                               }
                             </ImageBackground>
@@ -106,7 +104,7 @@ export default function NickName({ navigation }) {
                                       dispatch(photo1(image))
                                       setIsShowKeyboard(false)
                                       Keyboard.dismiss
-                                      navigation.navigate("NickName")}} title={t('orderPackage')} buttonStyle={{backgroundColor: '#F55926',borderWidth: 2, borderColor: '#F55926', marginBottom: 30}} textStyle={{color: 'rgba(244, 237, 225, 1)', }}/>
+                                      navigation.navigate("Activities")}} title={t('orderPackage')} buttonStyle={{backgroundColor: '#F55926',borderWidth: 2, borderColor: '#F55926', marginBottom: 30}} textStyle={{color: 'rgba(244, 237, 225, 1)', }}/>
                 </SafeAreaView>
           </ImageBackground>
         </View>
