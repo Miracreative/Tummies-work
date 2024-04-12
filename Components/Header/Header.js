@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, {useState, useEffect} from "react";
 import { View, TouchableOpacity, Image, Text, StatusBar} from 'react-native';
 import { RFPercentage, RFValue } from "react-native-responsive-fontsize";
 
@@ -13,6 +13,14 @@ const Header = ({onPress, isBack=true, isButtons=true, isWhite=false, lang=false
     const language = useSelector(state => state.language);
     const dispatch = useDispatch();
 
+    useEffect(() => {
+        if(language =='ar') {
+            i18next.changeLanguage('ar');
+        } else {
+            i18next.changeLanguage('en');
+        }
+    }, [])
+    
     const changeLng = () => {
         dispatch(langType())
 		if(language =='ar') {

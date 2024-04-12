@@ -3,9 +3,8 @@ import { Text, View, Image, TextInput, SafeAreaView, KeyboardAvoidingView, Image
 import {useTranslation} from 'react-i18next';
 import 'react-native-gesture-handler';
 import { RFPercentage, RFValue } from "react-native-responsive-fontsize";
+import CalendarPicker from "react-native-calendar-picker";
 import * as ImagePicker from 'expo-image-picker';
-import { DatePickerInput } from 'react-native-paper-dates';
-import { SafeAreaProvider } from 'react-native-safe-area-context';
 import {name1, lastName1, age1, photo1} from './../../../actions';
 import { useDispatch, useSelector } from 'react-redux';
 import BtnButton from '../../../Components/Button/Button';
@@ -16,24 +15,24 @@ export default function Name({ navigation }) {
 
   let {t} = useTranslation();
   const gender1 = useSelector(state => state.childrens.children1.gender);
-  const locales = useSelector(state => state.language);
 
   const [name, setName] = useState('');
   const [validName, setValidName] = useState(true);
   const [lastName, setLastName] = useState('');
   const [validLastName, setValidLastName] = useState(true);
-  const [age, setAge] = useState(null);
-  const [validAge, setValidAge] = useState(true);
   const [disable, setDisable] = useState(true);
   const [image, setImage] = useState(null);
   const [isShowKeyboard, setIsShowKeyboard] = useState(false);
+
+  const [calendar, setCalendar] = useState(false);
+
   const dispatch = useDispatch();
 
   const validateName = (text) => {
     if (text.length >=2) {
       setName(text)
       setValidName(true)
-      if(validName && validLastName && name.length >=2 && lastName.length >= 2 && age) {
+      if(validName && validLastName && name.length >=2 && lastName.length >= 2) {
         setDisable(false)
       }  
     }
@@ -47,7 +46,7 @@ export default function Name({ navigation }) {
     if (text.length >=2) {
       setLastName(text)
       setValidLastName(true)
-      if(validName && validLastName && name.length >=2 && lastName.length >= 2 && age) {
+      if(validName && validLastName && name.length >=2 && lastName.length >= 2) {
         setDisable(false)
       }  
     } else {
@@ -57,13 +56,23 @@ export default function Name({ navigation }) {
     }
   }
 
+    const onDateChange = (date) => {
+        setSelectedDate(date)
+		setCalendar(calendar => !calendar)
+    }
 
-  const validateAge = (d) => {
-    setAge(d)
-    setDisable(false)
-      
-    
-  }
+	let minDate;
+	minDate = new Date(new Date().setFullYear(new Date().getFullYear() - 16))
+
+	let maxDate;
+	maxDate = new Date(new Date().setFullYear(new Date().getFullYear() - 3))
+
+
+	const [selectedDate, setSelectedDate] = useState(minDate);
+
+    let day = selectedDate.getDate();
+    let mounth = selectedDate.toLocaleString('default', { month: 'long' });
+    let year = selectedDate.getFullYear();
 
   const pickImage = async () => {
     let result = await ImagePicker.launchImageLibraryAsync({
@@ -106,7 +115,7 @@ export default function Name({ navigation }) {
                                         resizeMode='contain'
                                             style={{ width: 120, height: 120}}
                                             source={icons.photoPhone} >
-                                            {image? <Image source={{ uri: image }} style={{ width: 90, height: 90, borderRadius: 100, marginTop: 17, marginLeft: 13, borderWidth: 2, borderColor: 'white', borderStyle: 'solid' }} /> :
+                                            {image? <Image source={{ uri: image }} style={{ width: 90, height: 90, borderRadius: 100, marginTop: 17, marginLeft: 13, borderWidth: 2, borderColor: 'white' }} /> :
                                             <Image source={gender1 == 'boy' ? icons.boyRing : icons.girlRing} style={{ width: 90, height: 90, borderRadius: 100, marginTop: 17, marginLeft: 13 }} />
                                             }
                                         </ImageBackground>
@@ -128,35 +137,31 @@ export default function Name({ navigation }) {
                                   onSubmitEditing={() => {Keyboard.dismiss(); setIsShowKeyboard(false) }}
                               />
                             <Text style={[styled.name__text, {fontSize: RFValue ( 20,  740)}]}>{t('age')}</Text>
-                                <SafeAreaProvider>
-                                <View style={[styled.name__input_name, {borderColor: validLastName ? 'rgba(12, 3, 0, 0.5)' : 'rgba(245, 89, 38, 1)'}]}>
-                                    <DatePickerInput
-                                        style={{backgroundColor: 'transparent', border: 'none', margin: 0}}
-                                        locale={locales}
-                                        value={age}
-                                        onChange={(d) => { validateAge(d)}}
-                                        inputMode="start"
-                                        iconColor="rgba(245, 89, 38, 1)"
-                                        label=''
-                                        onChangeText={(text) => { if(text?.length > 9) {setDisable(false)} }}
-                                        // startYear={startDate}
-                                        // endYear={endDate}
-                                        // validRange={true}
-                                        // validRange={ () => {
-                                        //     startDate: date.setFullYear(date.getFullYear() - 8)
-                                        //     endDate: date.setFullYear(date.getFullYear() - 1)
-                                        // }
-                                           
-                                        // }
-                                    />
-                                </View>
-                                </SafeAreaProvider>
+                            	<View
+									style={[styled.name__block]}>
+										<Text style={styled.name__input}>{mounth} {day}, {year}</Text>
+							  			<TouchableOpacity onPress={() => setCalendar(calendar => !calendar)} style={styled.name__iconContainer}>
+											<Image 
+												style={styled.name__iconCalendar}
+												source={icons.calendar} />
+										</TouchableOpacity>
+										<View style={[styled.name__picker, {opacity: calendar ? 1 : 0, pointerEvents: calendar ? 'auto' : "none"}]} >
+											<CalendarPicker 
+														minDate={minDate}
+														maxDate={maxDate}
+														initialDate={minDate}
+														selectedDayColor="#F55926"
+														selectedDayTextColor="#FFFFFF"
+														onDateChange={onDateChange}
+											/>
+										</View>
+									</View>
                                 </ScrollView>
                             </View>
                       </TouchableWithoutFeedback>
                       <BtnButton onPress={() => {dispatch(name1(name))
                                           dispatch(lastName1(lastName))
-                                          dispatch(age1(age))
+                                          dispatch(age1(selectedDate))
                                           dispatch(photo1(image))
                                           setIsShowKeyboard(false)
                                           Keyboard.dismiss

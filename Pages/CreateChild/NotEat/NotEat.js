@@ -95,7 +95,7 @@ return (
                         </View>
                     <BtnButton onPress={() => {
                                         dispatch(addAllergies(foodList))
-                                        navigation.navigate("NotEat")}} title={t('next')} buttonStyle={{backgroundColor: '#F55926',borderWidth: 2, borderColor: '#F55926', marginBottom: 30, opacity: 1,}} textStyle={{color: 'rgba(244, 237, 225, 1)', }}/>
+                                        navigation.navigate("DaysTime")}} title={t('next')} buttonStyle={{backgroundColor: '#F55926',borderWidth: 2, borderColor: '#F55926', marginBottom: 30, opacity: 1,}} textStyle={{color: 'rgba(244, 237, 225, 1)', }}/>
                 </SafeAreaView>
         </ImageBackground>
     </View>

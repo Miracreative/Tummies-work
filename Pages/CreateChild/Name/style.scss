@@ -84,6 +84,36 @@
             overflow: hidden;
         }
     }
+    &__block {
+        width: 100%;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        // background-color: green;
+        position: relative;
+    }
+    &__iconContainer {
+        position: absolute;
+        top: 0px;
+        right: 20px;
+        width: 55px;
+        height: 55px;
+    }
+    &__iconCalendar {
+        width: 55px;
+        height: 55px;
+        object-fit: contain;
+        // flex: 1;
+    }
+    &__picker {
+        position: absolute;
+        width: 100%;
+        bottom: 0px;
+        right: 0;
+        z-index: 5;
+        background-color: #F3EDDF;
+
+    }
 }
 .container {
     flex: 1;

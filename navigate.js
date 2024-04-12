@@ -13,6 +13,7 @@ import Gender from './Pages/CreateChild/Gender/Gender';
 import Note from './Pages/CreateChild/Note/Note';
 import Activities from './Pages/CreateChild/Activities/Activities';
 import NotEat from './Pages/CreateChild/NotEat/NotEat';
+import DaysTime from './Pages/CreateChild/DaysTime/DaysTime';
 
 // import Results from './Pages/Results/Results';
 // import Location from './Pages/Location/Location';
@@ -98,7 +99,7 @@ export default function Navigate() {
     // console.log(i18next)
     return  <NavigationContainer>
         <Stack.Navigator
-            initialRouteName="Activities"
+            initialRouteName="Name"
             screenOptions={{
                 headerShown: false,
             }}>
@@ -152,6 +153,10 @@ export default function Navigate() {
             <Stack.Screen
                 name="NotEat"
                 component={NotEat}
+            />
+            <Stack.Screen
+                name="DaysTime"
+                component={DaysTime}
             />
 
             {/* <Stack.Screen
