@@ -10,6 +10,7 @@ import Registration from './Pages/Registration/Registration';
 import Name from './Pages/CreateChild/Name/Name';
 import NickName from './Pages/CreateChild/NickName/NickName';
 import Gender from './Pages/CreateChild/Gender/Gender';
+import Note from './Pages/CreateChild/Note/Note';
 import Activities from './Pages/CreateChild/Activities/Activities';
 import NotEat from './Pages/CreateChild/NotEat/NotEat';
 import DaysTime from './Pages/CreateChild/DaysTime/DaysTime';
@@ -141,6 +142,10 @@ export default function Navigate() {
                 name="NickName"
                 component={NickName}
             />
+            <Stack.Screen
+                name="Note"
+                component={Note}
+             />
             <Stack.Screen
                 name="Activities"
                 component={Activities}

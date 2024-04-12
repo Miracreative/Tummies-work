@@ -15,6 +15,8 @@ export const age1 = (age) => ({type: "AGE1", payload: age});
 export const currentNickName = (nick) => ({type: "NICK1", payload: nick});
 export const currentHeightAction = (height) => ({type: "CHILDHEIGHT1", payload: height});
 export const currentWeightAction = (weight) => ({type: "CHILDWEIGHT1", payload: weight});
+export const favoriteHeroAction = (text) => ({type: "FAVORITEHEROES1", payload: text});
+export const favoriteFoodAction = (text) => ({type: "FAVORITEFOOD1", payload: text});
 export const price = (pr) => ({type: "SUM", payload: pr});
 export const lon = (l) => ({type: "LONG", payload: l});
 export const time = (t) => ({type: "TIME", payload: t});
