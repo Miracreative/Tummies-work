@@ -1,8 +1,6 @@
 import React, {useState} from 'react';
 import { Text, View, Image, TouchableOpacity, SafeAreaView, ScrollView} from 'react-native';
 import {useTranslation} from 'react-i18next';
-import { DatePickerInput } from 'react-native-paper-dates';
-import { SafeAreaProvider } from 'react-native-safe-area-context';
 import { RFPercentage, RFValue } from "react-native-responsive-fontsize";
 import 'react-native-gesture-handler';
 import {time, date} from './../../../actions';
