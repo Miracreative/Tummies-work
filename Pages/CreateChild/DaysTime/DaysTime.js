@@ -9,7 +9,7 @@ import BtnButton from '../../../Components/Button/Button';
 import {icons} from "./../../../constants";
 import Header from '../../../Components/Header/Header';
 import styled from "./style.scss";
-import CalendarPicker from "react-native-calendar-picker";
+// import CalendarPicker from "react-native-calendar-picker";
 export default function DaysTime({ navigation }) {
 
     const locales = useSelector(state => state.language);
@@ -41,6 +41,7 @@ export default function DaysTime({ navigation }) {
     //выбираем дату начала доставки 
     const [selectedStartDate, setSelectedStartDate] = useState(minDate);
     const onDateChange = (date) => {
+		setCalendar(false)
         setSelectedStartDate(date)
     }
 
@@ -78,42 +79,58 @@ export default function DaysTime({ navigation }) {
       }
     getDaysInMonth()
 
+
+	const [active, setActive] = useState('morning')
+
     return (
     
         <SafeAreaView style={styled.calendar}>
-            <Header style={{flex: 0.1}} onPress={() => navigation.goBack()} isButtons={false}/>
-            <ScrollView style={{position: 'relative', width: '100%', backgroundColor: "#F3EDDF"}}>
-            <View style={styled.calendar__back}>
-                <Image style={styled.calendar__backImg}
-                        source={icons.back}/>
-            </View>
+            <Header onPress={() => navigation.goBack()} isButtons={false}/>
+            <ScrollView style={{position: 'relative', width: '100%', backgroundColor: "#F3EDDF", zIndex: 5}}>
+           
             <View 
                 style={styled.calendar__container}>
+					<View style={styled.calendar__back}>
+						<Image style={styled.calendar__backImg}
+								source={icons.back}
+								resizeMode='contain'
+								/>
+					</View>
                     <Text style={[styled.calendar__title, {fontSize: RFValue ( 22,  740)}]}>{t('days')}</Text>
                     <Text style={[styled.calendar__descr, {fontSize: RFValue ( 14,  740)}]}>{t('subscr')}</Text>
-            <View
-                style={[styled.calendar__block, {marginBottom: calendar ? 300 : 0}]}>
-                        <Text style={styled.calendar__inputText}>{weekDay}, {mounth} {day},  {year}</Text>
-                            <TouchableOpacity
-                             style={styled.calendar__icon}
-                                onPress={()=> {setCalendar(calendar => !calendar)}
-                                                } >
-                                <Image 
-                                    style={styled.calendar__icon}
-                                    source={icons.calendar} />
-                            </TouchableOpacity>
-                            <View style={[styled.calendar__picker, {opacity: calendar ? 1 : 0, pointerEvents: calendar ? 'auto' : "none"}]} >
-                                <CalendarPicker 
-                                            minDate={minDate}
-                                            maxDate={maxDate}
-                                            initialDate={minDate}
-                                            selectedDayColor="#F55926"
-                                            selectedDayTextColor="#FFFFFF"
-                                            onDateChange={onDateChange} 
-                                            disabledDates={mounthesDays}
-                                />
-                            </View>
-                        </View>
+
+					<View style={styled.calendar__divider}></View>
+
+						<View
+							style={[styled.calendar__block]}>
+							{/* <Text style={styled.calendar__input}>{mounth} {day}, {year}</Text>
+							<TouchableOpacity onPress={() => setCalendar(calendar => !calendar)} style={styled.calendar__iconContainer}>
+								<Image 
+									style={styled.calendar__iconCalendar}
+									source={icons.calendar} />
+							</TouchableOpacity>
+							<View style={[styled.calendar__picker, {opacity: calendar ? 1 : 0, pointerEvents: calendar ? 'auto' : "none"}]} >
+								<CalendarPicker 
+											minDate={minDate}
+											maxDate={maxDate}
+											initialDate={minDate}
+											selectedDayColor="#F55926"
+											selectedDayTextColor="#FFFFFF"
+											onDateChange={onDateChange}
+								/> */}
+						{/* </View> */}
+                    </View>
+
+					<View style={styled.calendar__divider}></View>
+
+					<TouchableOpacity onPress={() => {{setActive('morning')}}} style={[styled.calendar__item, {backgroundColor: (active=='morning') ? '#FF9D7D' : 'transparent'}]}>
+						<View style={[styled.calendar__shadow, {backgroundColor: (active=='morning') ? '#F55926' : 'transparent'}]}></View>
+						<Text style={[styled.calendar__date, {color: (active=='morning') ? '#F3EDDF' : '#F55926', fontWeight: (active=='morning') ? 500 : 300}, {fontSize: RFValue ( 16,  740)}]}>{t('morning')}</Text>
+					</TouchableOpacity>  
+					<TouchableOpacity onPress={() => {{setActive('evening')}}} style={[styled.calendar__item, {backgroundColor: (active=='evening') ? '#FF9D7D' : 'transparent'}]}>
+						<View style={[styled.calendar__shadow, {backgroundColor: (active=='evening') ? '#F55926' : 'transparent'}]}></View>
+						<Text style={[styled.calendar__date, {color: (active=='evening') ? '#F3EDDF' : '#F55926', fontWeight: (active=='evening') ? 500 : 300}, {fontSize: RFValue ( 16,  740)}]}>{t('evening')}</Text>
+					</TouchableOpacity>  
             </View>
            
             {/* <View 

@@ -3,9 +3,7 @@ import {View, SafeAreaView, Text, ScrollView,} from 'react-native';
 import styled from './style.scss';
 import {useTranslation} from 'react-i18next';
 import { RFPercentage, RFValue } from "react-native-responsive-fontsize";
-// import * as Linking from 'expo-linking';
 import Header from '../../Components/Header/Header';
-import VideoApp from '../../Components/VideoApp/VideoApp';
 import YouTubeVideo from '../../Components/YouTubeVideo/YouTubeVideo';
 import axios from 'axios';
 
@@ -33,7 +31,7 @@ export default function Entertaiment({ navigation}) {
 	
     <View style={styled.container}>
         <SafeAreaView style={{flex:1}}>
-        <Header onPress={() => navigation.goBack()} 
+        <Header onPress={() => navigation.navigate('Main')} 
 					isBack={true} 
 					lang={false} 
 					isWhite={false}
