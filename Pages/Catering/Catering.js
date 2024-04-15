@@ -1,6 +1,5 @@
 import React from 'react';
 import {View, Image,  SafeAreaView, Text, ScrollView, TouchableOpacity} from 'react-native';
-import styled from './style.scss';
 import {useTranslation} from 'react-i18next';
 import { RFPercentage, RFValue } from "react-native-responsive-fontsize";
 
@@ -10,6 +9,7 @@ import { useDispatch} from 'react-redux';
 import Header from '../../Components/Header/Header';
 import Spinner from '../../Components/Spinner/Spinner';
 import axios from 'axios';
+import styled from "./styles.js";
 
 
 export default function Catering({ navigation}) {

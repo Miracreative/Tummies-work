@@ -1,0 +1,103 @@
+import { StyleSheet } from "react-native";
+
+const styled = StyleSheet.create({
+  name: {
+    flex: 1,
+    alignItems: 'center',
+    justifyContent: 'space-between',
+    backgroundColor: '#F3EDDF',
+    position: 'relative',
+  },
+  back: {
+      position: 'absolute',
+      zIndex: -1,
+      top: 0,
+      left: 0,
+      width: '100%',
+      height: 350,
+      flex: 1,
+  },
+  backImg: {
+      width: '100%',
+      flex: 1,
+      objectFit: 'cover',
+  },
+  container: {
+      flex: 1,
+      alignItems: 'center',
+      justifyContent: 'space-around',
+      position: 'relative',
+      width: '100%',
+  },
+  title: {
+    alignSelf: 'center',
+      marginBottom: 30,
+      fontWeight: 500,
+      textTransform: 'uppercase',
+      width: '70%',
+      textAlign: 'center',
+      color: '#0C0300',
+  },
+  descr: {
+      textAlign: 'center',
+      fontWeight: 300,
+      width: '50%',
+  },
+  iconContainer: {
+      width: '100%',
+      alignItems: 'center',
+  },
+  text: {
+      color: 'rgba(12, 3, 0, 1)',
+      textAlign: 'center',
+      fontWeight: 500,
+      marginBottom: 20,
+  },
+  icon: {
+      width: '30%',
+      alignSelf: 'center',
+      marginBottom: 40,
+  },
+  input: {
+      backgroundColor: 'white',
+      alignSelf: 'center',
+      width: '90%',
+      borderRadius: 20,
+      borderColor: 'rgba(12, 3, 0, 0.50)',
+      borderWidth: 1,
+      borderStyle: 'solid',
+      fontSize: 16,
+      padding: 15,
+      marginBottom: 20,
+    },
+    input_name: {
+        backgroundColor: 'white',
+        alignSelf: 'center',
+        width: '90%',
+        borderRadius: 20,
+        borderColor: 'rgba(12, 3, 0, 0.50)',
+        borderWidth: 1,
+        borderStyle: 'solid',
+        fontSize: 16,
+        padding: 0,
+        marginBottom: 20,
+        overflow: 'hidden',
+    },
+  divider: {
+      width: '94%',
+      height: 1,
+      backgroundColor: '#0C0300',
+      opacity: .2,
+      alignSelf: 'center',
+      marginBottom: 20,
+  },
+container: {
+    flex: 1,
+    backgroundColor: '#F3EDDF',
+    width: '100%',
+    position: 'relative',
+    justifyContent: 'space-between',
+},
+});
+
+export default styled;
