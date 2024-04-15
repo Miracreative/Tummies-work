@@ -106,6 +106,7 @@
     "eggs": "Eggs",
     "shugar": "Shugar",
     "bread": "Bread",
-    "eat": "What do you not eat?"
+    "eat": "What do you not eat?",
+    "getDiscount": "You can get a discount if you add another child"
 
 }
