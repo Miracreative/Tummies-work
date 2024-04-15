@@ -1,14 +1,12 @@
 import React from 'react';
 import {View, Image,  SafeAreaView, Text, TouchableOpacity, ImageBackground} from 'react-native';
-import styled from './style.scss';
 import {useTranslation} from 'react-i18next';
 import {icons} from "../../constants";
 import { RFPercentage, RFValue } from "react-native-responsive-fontsize";
 import * as Linking from 'expo-linking';
 import Header from '../../Components/Header/Header';
-
 import { useSelector} from 'react-redux';
-
+import styled from "./styles.js";
 
 export default function CateringDetail({ navigation}) {
 
