@@ -3,7 +3,7 @@ import * as ScreenOrientation from 'expo-screen-orientation';
 import { RFPercentage, RFValue } from "react-native-responsive-fontsize";
 import {View, Image, TouchableOpacity, Text} from 'react-native';
 import { Video, ResizeMode } from 'expo-av';
-import styled from './style.scss';
+import styled from './styles.js';
 import {icons} from "../../constants";
 
 function VideoApp({name, url}) {

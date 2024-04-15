@@ -1,6 +1,6 @@
 import React, { useCallback } from 'react';
 import {View, SafeAreaView, Text, ScrollView,} from 'react-native';
-import styled from './style.scss';
+import styled from './styles.js';
 import {useTranslation} from 'react-i18next';
 import { RFPercentage, RFValue } from "react-native-responsive-fontsize";
 import Header from '../../Components/Header/Header';

@@ -1,7 +1,7 @@
 import React from "react";
 import { View, Image, Text, StyleSheet, useWindowDimensions, ImageBackground} from 'react-native';
 import { RFPercentage, RFValue } from "react-native-responsive-fontsize";
-import styled from "./slideItem.scss";
+import styled from "./styles.js";
 
 const SlideItem = ({item}) => {
     const {width} = useWindowDimensions();
@@ -20,7 +20,7 @@ const SlideItem = ({item}) => {
 
                 <View style={styled.textContainer}>
                     <Text
-                        style={[styled.title, {fontSize: RFValue ( 22 ,  740)}]}>{item.title}</Text>
+                        style={[styled.title, {fontSize: RFValue ( 22 ,  740), color:'rgba(12, 3, 0, 1)' }]}>{item.title}</Text>
                     {
                         returnText()
                     }

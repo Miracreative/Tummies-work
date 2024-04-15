@@ -68,7 +68,7 @@ export default function AuthConfirm({ navigation, sendCodeToPhoneNumber, bottomB
           // behavior={Platform.OS =='ios' ? "padding" : "height"}
           style={{ position: "relative" }}
         >
-          <Text style={[styled.auth__title, {fontSize: RFValue ( 22 ,  740)}]}>Phone number</Text>
+          <Text style={[styled.title, {fontSize: RFValue ( 22 ,  740)}]}>Phone number</Text>
           <TextInputMask
             type={"cel-phone"}
             options={{
@@ -77,7 +77,7 @@ export default function AuthConfirm({ navigation, sendCodeToPhoneNumber, bottomB
               dddMask: "(971) ",
             }}
             ref={(ref) => (phoneField = ref)}
-            style={[styled.auth__input, valid ? { borderColor: " rgba(12, 3, 0, 0.50)" } : { borderColor: "rgba(255, 0, 0, 1)" }]}
+            style={[styled.input, valid ? { borderColor: " rgba(12, 3, 0, 0.50)" } : { borderColor: "rgba(255, 0, 0, 1)" }]}
             keyboardType="numeric"
             value={phoneNumber}
             onChangeText={(phoneNumber) => {
@@ -95,9 +95,9 @@ export default function AuthConfirm({ navigation, sendCodeToPhoneNumber, bottomB
 
           {valid ? null : <Text style={[styled.auth__error,{fontSize: RFValue ( 14 ,  740)}]}>Enter the correct phone number</Text>}
 
-          <Text style={[styled.auth__title, {fontSize: RFValue ( 22 ,  740)}]}>Verification code</Text>
+          <Text style={[styled.title, {fontSize: RFValue ( 22 ,  740)}]}>Verification code</Text>
           <TextInput
-            style={[styled.auth__input, { textAlign: "center", color: incorrectCode ? "red" : "rgba(12, 3, 0, 1)", borderColor: incorrectCode ? "red" : "rgba(12, 3, 0, 1)" }]}
+            style={[styled.input, { textAlign: "center", color: incorrectCode ? "red" : "rgba(12, 3, 0, 1)", borderColor: incorrectCode ? "red" : "rgba(12, 3, 0, 1)" }]}
             keyboardType="numeric"
             value={code}
             onFocus={() => (incorrectCode ? setIncorrectCode(false) : null)}
@@ -106,7 +106,7 @@ export default function AuthConfirm({ navigation, sendCodeToPhoneNumber, bottomB
               value.length > 5 ? setDisable(false) : null;
             }}
           />
-          <Text style={[styled.auth__title, { color: "rgba(245, 89, 38, 1)", marginTop: 35 }, {fontSize: RFValue ( 20 ,  740)}]}>The code didn 't come ?</Text>
+          <Text style={[styled.title, { color: "rgba(245, 89, 38, 1)", marginTop: 35 }, {fontSize: RFValue ( 20 ,  740)}]}>The code didn 't come ?</Text>
           <TouchableOpacity
               onPress={() => {
                 sendCodeToPhoneNumber(phoneNumber)
@@ -115,11 +115,11 @@ export default function AuthConfirm({ navigation, sendCodeToPhoneNumber, bottomB
               }}
               style={{ pointerEvents: readySend ? "auto" : "none" }}
             >
-              <Text style={[styled.auth__roundbtn, {fontSize: RFValue ( 24 ,  740)}]}>{readySend ? "Send again" : transformTime(time)}</Text>
+              <Text style={[styled.roundbtn, {fontSize: RFValue ( 24 ,  740)}]}>{readySend ? "Send again" : transformTime(time)}</Text>
             </TouchableOpacity>
           
         </ScrollView>
-        <View style={styled.auth__buttons}>
+        <View style={styled.buttons}>
            
             <BtnButton
               onPress={() => {

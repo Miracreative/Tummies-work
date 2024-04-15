@@ -6,7 +6,7 @@ const styled = StyleSheet.create({
         backgroundColor: 'rgba(244, 237, 225, 1)',
         position: 'relative'
     },
-    auth__img: {
+    img: {
         objectFit: 'contain',
         marginBottom: 40,
         marginTop: 80,
@@ -14,7 +14,7 @@ const styled = StyleSheet.create({
         height: 160,
         alignSelf: 'center',
     },
-    auth__title: {
+    title: {
         fontSize: 22,
         fontWeight: 500,
         color: "#0C0300",
@@ -23,7 +23,7 @@ const styled = StyleSheet.create({
         marginTop: 0,
         textAlign: 'center'
     },
-    auth__text: {
+    text: {
         fontWeight: 300,
         color: "#ffffff",
         marginBottom: 20,
@@ -32,13 +32,13 @@ const styled = StyleSheet.create({
         textAlign: 'center',
         width: "28%"
     },
-    auth__started: {
+    started: {
         textTransform: 'uppercase',
         textAlign: 'center',
         color: "#ffffff",
         fontWeight: 500
     },
-    auth__input: {
+    input: {
         backgroundColor: 'white',
         marginBottom: 10,
         alignSelf: 'center',
@@ -50,15 +50,15 @@ const styled = StyleSheet.create({
         borderStyle: 'solid',
         padding: 15,
     },
-    auth__buttons: {
+    buttons: {
         marginBottom: 20
     },
-    auth__error: {
+    error: {
         color: 'rgba(255, 0, 0, 1)',
         textAlign: 'center',
         fontWeight: 500
     },
-    auth__roundbtn: {
+    roundbtn: {
         width: '40%',
         // height: 100px;
         aspectRatio: 1,

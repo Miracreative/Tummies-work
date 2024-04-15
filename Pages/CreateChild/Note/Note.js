@@ -9,7 +9,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import BtnButton from '../../../Components/Button/Button';
 import {icons} from '../../../constants';
 import Header from '../../../Components/Header/Header';
-import styled from './style.scss';
+import styled from './styles.js';
 export default function NickName({ navigation }) {
 
   //хук мультиязычности
@@ -53,7 +53,7 @@ export default function NickName({ navigation }) {
     <KeyboardAvoidingView
       behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
       style={{flex: 1}}>
-        <View style={styled.container}>
+        <View style={styled.containerMain}>
           <ImageBackground
             resizeMode='cover'
             style={{flex: 1}}
@@ -67,7 +67,7 @@ export default function NickName({ navigation }) {
                       <View style={{flex: 1, justifyContent: 'space-between', alignItems: 'center', width: "100%"}}>
                         <Header onPress={() => navigation.goBack()} isButtons={false}/>
                         <ScrollView style={{width: "100%", flex: 1}}>
-                          <TouchableOpacity style={styled.name__icon} onPress={pickImage}>
+                          <TouchableOpacity style={styled.icon} onPress={pickImage}>
                             <ImageBackground 
                               resizeMode='contain'
                               style={{ width: 120, height: 120}}
@@ -77,21 +77,21 @@ export default function NickName({ navigation }) {
                               }
                             </ImageBackground>
                           </TouchableOpacity>
-                          <Text style={[styled.name__text, {fontSize: RFValue ( 20,  740)}]}>{t('favoriteHeroesStart')} {name}{t('favoriteHeroesEnd')} </Text>
+                          <Text style={[styled.text, {fontSize: RFValue ( 20,  740)}]}>{t('favoriteHeroesStart')} {name}{t('favoriteHeroesEnd')} </Text>
                           <TextInput
                             multiline
                             numberOfLines={4}
-                            style={styled.name__input}
+                            style={styled.input}
                             onChangeText={text => setFavoriteHero(text)}
                             onFocus={() => {setIsShowKeyboard(true)}}
                             value={favoriteHero}
                             onSubmitEditing={() => {Keyboard.dismiss(); setIsShowKeyboard(false) }}/>
 
-                          <Text style={[styled.name__text, {fontSize: RFValue ( 20,  740)}]}>{name}{t('favoriteFood')}</Text>
+                          <Text style={[styled.text, {fontSize: RFValue ( 20,  740)}]}>{name}{t('favoriteFood')}</Text>
                           <TextInput
                             multiline
                             numberOfLines={4}
-                            style={[styled.name__input]}
+                            style={[styled.input]}
                             onChangeText={text => {setFavoriteFood(text)}}
                             onFocus={() => {setIsShowKeyboard(true)}}
                             value={favoriteFood}

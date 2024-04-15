@@ -2,7 +2,7 @@ import React from 'react';
 import * as ScreenOrientation from 'expo-screen-orientation';
 import { RFPercentage, RFValue } from "react-native-responsive-fontsize";
 import {View, Image, TouchableOpacity, Text} from 'react-native';
-import styled from './style.scss';
+import styled from './styles.js';
 import {icons} from "../../constants";
 import YoutubePlayer from "react-native-youtube-iframe";
 

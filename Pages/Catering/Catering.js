@@ -7,7 +7,6 @@ import {catering} from './../../actions';
 import { useDispatch} from 'react-redux';
 
 import Header from '../../Components/Header/Header';
-import Spinner from '../../Components/Spinner/Spinner';
 import axios from 'axios';
 import styled from "./styles.js";
 
