@@ -16,7 +16,7 @@ export default function DaysTime({ navigation }) {
     let {t} = useTranslation();
  
     //для управляемого инпута
-    const [date, setDate] = useState('');
+    const [date, setDate] = useState(''); 
     //аидимость календаря
     const [calendar, setCalendar] = useState(false);
 

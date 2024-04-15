@@ -139,7 +139,7 @@ export default function Name({ navigation }) {
                   />
                   <Text style={[styled.text, { fontSize: RFValue(20, 740) }]}>{t("age")}</Text>
                   <View style={[styled.block]}>
-                    <Text style={styled.input}>
+                    <Text style={[styled.input, {fontSize: RFValue ( 16,  740), marginLeft: '5%'}]}>
                       {mounth} {day}, {year}
                     </Text>
                     <TouchableOpacity onPress={() => setCalendar((calendar) => !calendar)} style={styled.iconContainer}>
