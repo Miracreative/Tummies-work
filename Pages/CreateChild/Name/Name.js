@@ -3,7 +3,7 @@ import { Text, View, Image, TextInput, SafeAreaView, KeyboardAvoidingView, Image
 import {useTranslation} from 'react-i18next';
 import 'react-native-gesture-handler';
 import { RFPercentage, RFValue } from "react-native-responsive-fontsize";
-// import CalendarPicker from "react-native-calendar-picker";
+import CalendarPicker from "react-native-calendar-picker";
 import * as ImagePicker from 'expo-image-picker';
 import {name1, lastName1, age1, photo1} from './../../../actions';
 import { useDispatch, useSelector } from 'react-redux';
@@ -137,7 +137,7 @@ export default function Name({ navigation }) {
                                   onSubmitEditing={() => {Keyboard.dismiss(); setIsShowKeyboard(false) }}
                               />
                             <Text style={[styled.name__text, {fontSize: RFValue ( 20,  740)}]}>{t('age')}</Text>
-                            	{/* <View
+                            	<View
 										style={[styled.name__block]}>
 										<Text style={styled.name__input}>{mounth} {day}, {year}</Text>
 							  			<TouchableOpacity onPress={() => setCalendar(calendar => !calendar)} style={styled.name__iconContainer}>
@@ -155,7 +155,7 @@ export default function Name({ navigation }) {
 														onDateChange={onDateChange}
 											/>
 										</View>
-									</View> */}
+									</View>
                                 </ScrollView>
                             </View>
                       </TouchableWithoutFeedback>

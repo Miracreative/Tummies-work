@@ -37,6 +37,12 @@
     },
     "plugins": [
       [
+        "expo-calendar",
+        {
+          "calendarPermission": "The app needs to access your calendar."
+        }
+      ],
+      [
         "expo-av",
         {
           "microphonePermission": "Allow tummiesapp to access your microphone."

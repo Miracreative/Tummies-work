@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import { Text, View, Image, TouchableOpacity, SafeAreaView, ScrollView} from 'react-native';
+import { Text, View, Image, TouchableOpacity, SafeAreaView, ScrollView, ImageBackground} from 'react-native';
 import {useTranslation} from 'react-i18next';
 import { RFPercentage, RFValue } from "react-native-responsive-fontsize";
 import 'react-native-gesture-handler';
@@ -9,7 +9,7 @@ import BtnButton from '../../../Components/Button/Button';
 import {icons} from "./../../../constants";
 import Header from '../../../Components/Header/Header';
 import styled from "./style.scss";
-// import CalendarPicker from "react-native-calendar-picker";
+import CalendarPicker from "react-native-calendar-picker";
 export default function DaysTime({ navigation }) {
 
     const locales = useSelector(state => state.language);
@@ -97,13 +97,17 @@ export default function DaysTime({ navigation }) {
 								/>
 					</View>
                     <Text style={[styled.calendar__title, {fontSize: RFValue ( 22,  740)}]}>{t('days')}</Text>
-                    <Text style={[styled.calendar__descr, {fontSize: RFValue ( 14,  740)}]}>{t('subscr')}</Text>
+                    <Text style={[styled.calendar__descr, {fontSize: RFValue ( 16,  740)}]}>{t('subscr')}</Text>
+
+                    <Text style={[styled.calendar__descr, {fontSize: RFValue ( 18,  740)}]}>{t('getDiscount')}</Text>
+
+                    <BtnButton onPress={() => {navigation.navigate("Name")}} title={t('addAChild')} buttonStyle={{backgroundColor: '#F55926',borderWidth: 2, borderColor: '#F55926', marginBottom: 20}} textStyle={{color: 'rgba(244, 237, 225, 1)', }}/>
 
 					<View style={styled.calendar__divider}></View>
 
 						<View
 							style={[styled.calendar__block]}>
-							{/* <Text style={styled.calendar__input}>{mounth} {day}, {year}</Text>
+							<Text style={styled.calendar__input}>{mounth} {day}, {year}</Text>
 							<TouchableOpacity onPress={() => setCalendar(calendar => !calendar)} style={styled.calendar__iconContainer}>
 								<Image 
 									style={styled.calendar__iconCalendar}
@@ -117,8 +121,8 @@ export default function DaysTime({ navigation }) {
 											selectedDayColor="#F55926"
 											selectedDayTextColor="#FFFFFF"
 											onDateChange={onDateChange}
-								/> */}
-						{/* </View> */}
+								/>
+						</View>
                     </View>
 
 					<View style={styled.calendar__divider}></View>
@@ -131,53 +135,17 @@ export default function DaysTime({ navigation }) {
 						<View style={[styled.calendar__shadow, {backgroundColor: (active=='evening') ? '#F55926' : 'transparent'}]}></View>
 						<Text style={[styled.calendar__date, {color: (active=='evening') ? '#F3EDDF' : '#F55926', fontWeight: (active=='evening') ? 500 : 300}, {fontSize: RFValue ( 16,  740)}]}>{t('evening')}</Text>
 					</TouchableOpacity>  
-            </View>
-           
-            {/* <View 
-              style={styled.calendar__container}>
-                <Text style={[styled.calendar__title, {fontSize: RFValue ( 22,  740)}]}>{t('days')}</Text>
-                <Text style={[styled.calendar__descr, {fontSize: RFValue ( 14,  740)}]}>{t('subscr')}</Text>
 
-                <View
-                    style={[styled.calendar__block, {marginBottom: calendar ? 300 : 0}]}>
-                        <Text style={styled.calendar__input}>{weekDay}, {mounth} {day},  {year}</Text>
-                    <TouchableOpacity
-                         onPress={()=> {setCalendar(calendar => !calendar)}
-                                        } >
-                        <Image 
-                            style={styled.calendar__icon}
-                            source={icons.calendar} />
-                    </TouchableOpacity>
-                    <View style={[styled.calendar__picker, {opacity: calendar ? 1 : 0, pointerEvents: calendar ? 'auto' : "none"}]} >
-                  <CalendarPicker 
-                            minDate={minDate}
-                            maxDate={maxDate}
-                            initialDate={minDate}
-                            selectedDayColor="#F55926"
-                            selectedDayTextColor="#FFFFFF"
-                            onDateChange={onDateChange} 
-                            disabledDates={mounthesDays}
-                  />
-                  </View>
-                </View>
-                <View style={styled.calendar__divider}></View>
-              <TouchableOpacity onPress={() => {{setActive('morning')}}} style={[styled.calendar__item, {backgroundColor: (active=='morning') ? '#FF9D7D' : '#F3EDDF'}]}>
-                <View style={[styled.calendar__shadow, {backgroundColor: (active=='morning') ? '#F55926' : '#F3EDDF'}]}></View>
-                <Text style={[styled.calendar__date, {color: (active=='morning') ? '#F3EDDF' : '#F55926', fontWeight: (active=='morning') ? 500 : 300}, {fontSize: RFValue ( 16,  740)}]}>{t('morning')}</Text>
-              </TouchableOpacity>  
-              <TouchableOpacity onPress={() => {{setActive('evening')}}} style={[styled.calendar__item, {backgroundColor: (active=='evening') ? '#FF9D7D' : '#F3EDDF'}]}>
-                <View style={[styled.calendar__shadow, {backgroundColor: (active=='evening') ? '#F55926' : '#F3EDDF'}]}></View>
-                <Text style={[styled.calendar__date, {color: (active=='evening') ? '#F3EDDF' : '#F55926', fontWeight: (active=='evening') ? 500 : 300}, {fontSize: RFValue ( 16,  740)}]}>{t('evening')}</Text>
-              </TouchableOpacity>  
-              <Text style={[styled.calendar__descr, {fontSize: RFValue ( 14,  740)}]}>{t('daystext')}</Text>
+                    <Text style={[styled.calendar__descr, {fontSize: RFValue ( 16,  740)}]}>{t('daystext')}</Text>
             </View>
             <View style={styled.calendar__plan}>
-              <Image style={styled.calendar__img}
-                     source={icons.doubleGexagon} />
-              <Text style={[styled.calendar__text, {fontSize: RFValue ( 14,  740)}]}>{t('total')}</Text>
-              <Text style={[styled.calendar__price, {fontSize: RFValue ( 64,  740)}]}>{num}</Text>
-              <Text style={[styled.calendar__text, {fontSize: RFValue ( 14,  740)}]}>{long}</Text>
-            </View> */}
+                <ImageBackground style={styled.calendar__img}
+                        source={icons.doubleGexagon} >
+                    <Text style={[styled.calendar__text, {fontSize: RFValue ( 14,  740)}]}>{t('total')}</Text>
+                    <Text style={[styled.calendar__price, {fontSize: RFValue ( 64,  740)}]}>1000</Text>
+                    <Text style={[styled.calendar__text, {fontSize: RFValue ( 14,  740)}]}>sar/mounth</Text>
+                </ImageBackground>
+            </View> 
         
          <View style={styled.calendar__backDown}>
             <Image style={styled.calendar__backImg}

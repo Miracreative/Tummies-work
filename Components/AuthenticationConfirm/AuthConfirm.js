@@ -1,5 +1,6 @@
 import React, { useState, useRef, useEffect } from "react";
 import { Text, View, SafeAreaView, Image, TextInput, TouchableOpacity, KeyboardAvoidingView, ScrollView } from "react-native";
+import { RFPercentage, RFValue } from "react-native-responsive-fontsize";
 import { TextInputMask } from "react-native-masked-text";
 import { useTranslation } from "react-i18next";
 import { useDispatch, useSelector } from "react-redux";
@@ -8,7 +9,7 @@ import { userPhone } from "../../actions";
 import BtnButton from "../Button/Button";
 import { icons } from "../../constants";
 import Header from "../Header/Header";
-import styled from "./style.scss";
+import styled from "./styles.js";
 
 export default function AuthConfirm({ navigation, sendCodeToPhoneNumber, bottomBtn }) {
   const { t } = useTranslation();
@@ -61,16 +62,13 @@ export default function AuthConfirm({ navigation, sendCodeToPhoneNumber, bottomB
   // }
 
   return (
-    <View style={{flex: 1}}> 
       <SafeAreaView style={styled.auth}>
-        <View style={styled.wrapper}>
-          <Header onPress={() => navigation.navigate("Main")} isWhite={false} />
-        </View>
+        <Header onPress={() => navigation.goBack()} isButtons={false}/>
         <ScrollView
           // behavior={Platform.OS =='ios' ? "padding" : "height"}
           style={{ position: "relative" }}
         >
-          <Text style={styled.auth__title}>Phone number</Text>
+          <Text style={[styled.auth__title, {fontSize: RFValue ( 22 ,  740)}]}>Phone number</Text>
           <TextInputMask
             type={"cel-phone"}
             options={{
@@ -95,9 +93,9 @@ export default function AuthConfirm({ navigation, sendCodeToPhoneNumber, bottomB
             }}
           />
 
-          {valid ? null : <Text style={styled.auth__error}>Enter the correct phone number</Text>}
+          {valid ? null : <Text style={[styled.auth__error,{fontSize: RFValue ( 14 ,  740)}]}>Enter the correct phone number</Text>}
 
-          <Text style={styled.auth__title}>Verification code</Text>
+          <Text style={[styled.auth__title, {fontSize: RFValue ( 22 ,  740)}]}>Verification code</Text>
           <TextInput
             style={[styled.auth__input, { textAlign: "center", color: incorrectCode ? "red" : "rgba(12, 3, 0, 1)", borderColor: incorrectCode ? "red" : "rgba(12, 3, 0, 1)" }]}
             keyboardType="numeric"
@@ -108,10 +106,8 @@ export default function AuthConfirm({ navigation, sendCodeToPhoneNumber, bottomB
               value.length > 5 ? setDisable(false) : null;
             }}
           />
-          <Text style={[styled.auth__title, { color: "rgba(245, 89, 38, 1)" }]}>The code didn 't come ?</Text>
-
-          <View style={styled.auth__buttons}>
-            <TouchableOpacity
+          <Text style={[styled.auth__title, { color: "rgba(245, 89, 38, 1)", marginTop: 35 }, {fontSize: RFValue ( 20 ,  740)}]}>The code didn 't come ?</Text>
+          <TouchableOpacity
               onPress={() => {
                 sendCodeToPhoneNumber(phoneNumber)
                 setTime(10);
@@ -119,8 +115,12 @@ export default function AuthConfirm({ navigation, sendCodeToPhoneNumber, bottomB
               }}
               style={{ pointerEvents: readySend ? "auto" : "none" }}
             >
-              <Text style={styled.auth__roundbtn}>{readySend ? "Send again" : transformTime(time)}</Text>
+              <Text style={[styled.auth__roundbtn, {fontSize: RFValue ( 24 ,  740)}]}>{readySend ? "Send again" : transformTime(time)}</Text>
             </TouchableOpacity>
+          
+        </ScrollView>
+        <View style={styled.auth__buttons}>
+           
             <BtnButton
               onPress={() => {
                 navigation.navigate("Results")
@@ -132,8 +132,6 @@ export default function AuthConfirm({ navigation, sendCodeToPhoneNumber, bottomB
             />
             <BtnButton onPress={() => navigation.navigate(bottomBtn.navigateTo)} title={t(bottomBtn.title)} buttonStyle={{ marginTop: isShowKeyboard ? 5 : 15, marginBottom: isShowKeyboard ? 5 : 20 }} textStyle={{ color: "black" }} />
           </View>
-        </ScrollView>
       </SafeAreaView>
-    </View>
   );
 }
