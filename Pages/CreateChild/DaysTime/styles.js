@@ -75,8 +75,9 @@ const styled = StyleSheet.create({
     textAlign: "center",
     color: "#F55926",
     marginHorizontal: 16,
-    marginTop: 11,
-    marginBottom: 18,
+    marginTop: 18,
+    marginBottom: 11,
+    zIndex: 2
   },
   shadow: {
     position: "absolute",

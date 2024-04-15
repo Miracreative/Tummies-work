@@ -62,6 +62,7 @@ const styled = StyleSheet.create({
     fontSize: 16,
     padding: 15,
     marginBottom: 20,
+    display: 'flex'
   },
   input_name: {
     backgroundColor: "white",
