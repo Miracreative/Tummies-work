@@ -8,7 +8,7 @@ import { useDispatch} from 'react-redux';
 import BtnButton from '../../../Components/Button/Button';
 import {icons} from '../../../constants';
 import Header from '../../../Components/Header/Header';
-import styled from './style.scss'; 
+import styled from './styles.js'; 
 export default function Gender({ navigation }) {
 
   let {t} = useTranslation();
@@ -24,19 +24,19 @@ export default function Gender({ navigation }) {
             source={icons.backFull}>
               <SafeAreaView style={{flex:1, justifyContent: 'space-between', alignItems: 'center'}}>
                 <Header style={{flex: 0.1}} onPress={() => navigation.goBack()} isButtons={false}/>
-                <Text style={[styled.gender__title, {fontSize: RFValue ( 24,  740)}]}>{t('genderTitle')}</Text>
-                <Text style={[styled.gender__descr, {fontSize: RFValue ( 14,  740)}]}>{t('genderDescr')}</Text>
-                <TouchableOpacity style={styled.gender__iconContainer}
+                <Text style={[styled.title, {fontSize: RFValue ( 24,  740)}]}>{t('genderTitle')}</Text>
+                <Text style={[styled.descr, {fontSize: RFValue ( 14,  740)}]}>{t('genderDescr')}</Text>
+                <TouchableOpacity style={styled.iconContainer}
                                   onPress={() => setGender('boy')}>
-                  <Image style={styled.gender__icon}
+                  <Image style={styled.icon}
                           source={(gender=='boy') ? icons.redBoy : icons.boy} />
-                  <Text style={[styled.gender__text, {fontSize: RFValue ( 20,  740)}]}>{t('boy')}</Text>
+                  <Text style={[styled.text, {fontSize: RFValue ( 20,  740)}]}>{t('boy')}</Text>
                 </TouchableOpacity>
-                <TouchableOpacity style={styled.gender__iconContainer}
+                <TouchableOpacity style={styled.iconContainer}
                                   onPress={() => setGender('girl')}>
-                  <Image style={styled.gender__icon}
+                  <Image style={styled.icon}
                           source={(gender=='girl') ? icons.redGirl : icons.girl} />
-                  <Text style={[styled.gender__text, {fontSize: RFValue ( 20,  740)}]}>{t('girl')}</Text>
+                  <Text style={[styled.text, {fontSize: RFValue ( 20,  740)}]}>{t('girl')}</Text>
                 </TouchableOpacity>
                 <BtnButton onPress={() => {dispatch(gen1(gender))
                                             navigation.navigate('Name')}

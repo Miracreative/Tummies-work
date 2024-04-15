@@ -9,7 +9,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import BtnButton from '../../../Components/Button/Button';
 import {icons} from '../../../constants';
 import Header from '../../../Components/Header/Header';
-import styled from './style.scss';
+import styled from './styles.js';
 export default function NickName({ navigation }) {
 
   //хук мультиязычности
@@ -103,7 +103,7 @@ export default function NickName({ navigation }) {
                             <View style={{flex: 1, justifyContent: 'space-between', alignItems: 'center', width: "100%"}}>
                             <Header onPress={() => navigation.goBack()} isButtons={false}/>
                                 <ScrollView style={{width: "100%", flex: 1}}>
-                                    <TouchableOpacity style={styled.name__icon} onPress={pickImage}>
+                                    <TouchableOpacity style={styled.icon} onPress={pickImage}>
                                         <ImageBackground 
                                         resizeMode='contain'
                                             style={{ width: 120, height: 120}}
@@ -113,19 +113,19 @@ export default function NickName({ navigation }) {
                                             }
                                         </ImageBackground>
                                     </TouchableOpacity>
-                                    <Text style={[styled.name__text, {fontSize: RFValue ( 20,  740)}]}>{t('nickStart')} {childName}{t('nickEnd')} </Text>
+                                    <Text style={[styled.text, {fontSize: RFValue ( 20,  740)}]}>{t('nickStart')} {childName}{t('nickEnd')} </Text>
                                     <TextInput
-                                  style={[styled.name__input, {borderColor: validNickName ? 'rgba(12, 3, 0, 0.5)' : 'rgba(245, 89, 38, 1)'}]}
+                                  style={[styled.input, {borderColor: validNickName ? 'rgba(12, 3, 0, 0.5)' : 'rgba(245, 89, 38, 1)'}]}
                                   onChangeText={text => validateNickName(text)}
                                   onFocus={() => {setIsShowKeyboard(true)}}
                                   value={nickName}
                                   onSubmitEditing={() => {Keyboard.dismiss(); setIsShowKeyboard(false) }}
                               	/>
-                    			<View style={styled.name__divider}></View>
+                    			<View style={styled.divider}></View>
 
-								<Text style={[styled.name__text, {fontSize: RFValue ( 20,  740)}]}>{t('currentWeight')}</Text>
+								<Text style={[styled.text, {fontSize: RFValue ( 20,  740)}]}>{t('currentWeight')}</Text>
 								<TextInput
-									style={[styled.name__input]}
+									style={[styled.input]}
 									type="numeric"
 									keyboardType = 'numeric'
 									onChangeText={text => {validateWeight(text)}}
@@ -134,9 +134,9 @@ export default function NickName({ navigation }) {
 									onSubmitEditing={() => {Keyboard.dismiss(); setIsShowKeyboard(false) }}
 								/>
 								
-								<Text style={[styled.name__text, {fontSize: RFValue ( 20,  740)}]}>{t('currentHeight')}</Text>
+								<Text style={[styled.text, {fontSize: RFValue ( 20,  740)}]}>{t('currentHeight')}</Text>
 								<TextInput
-									style={[styled.name__input]}
+									style={[styled.input]}
 									type="numeric"
 									keyboardType = 'numeric'
 									onChangeText={text => {validateHeight(text)}}
