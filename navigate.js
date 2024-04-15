@@ -99,7 +99,7 @@ export default function Navigate() {
     // console.log(i18next)
     return  <NavigationContainer>
         <Stack.Navigator
-            initialRouteName="Login"
+            initialRouteName="Note"
             screenOptions={{
                 headerShown: false,
             }}>

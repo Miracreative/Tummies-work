@@ -4,7 +4,7 @@ import { RFPercentage, RFValue } from "react-native-responsive-fontsize";
 
 import{icons} from "./../../constants";
 
-import styled from "./header.scss";
+import styled from "./styles.js";
 import {langType} from '../../actions';
 import { useDispatch, useSelector } from 'react-redux';
 import i18next from './../../services/i18next';
@@ -32,7 +32,7 @@ const Header = ({onPress, isBack=true, isButtons=true, isWhite=false, lang=false
 
     return (
         <View style={[styled.header, {paddingTop: isStatus? StatusBar.currentHeight : 0}]}>
-            <View
+            <View 
                 style={styled.header__wrapper}>
                 
                 {

@@ -1,6 +1,6 @@
 import React from 'react';
 import {View, Image,  SafeAreaView, } from 'react-native';
-import styled from './style.scss';
+import styled from './styles.js';
 import {icons} from "../../constants";
 import BtnButton from '../../Components/Button/Button';
 import {useTranslation} from 'react-i18next';

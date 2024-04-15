@@ -4,10 +4,10 @@ import { icons } from './../../constants';
 import 'react-native-gesture-handler';
 import { RFPercentage, RFValue } from "react-native-responsive-fontsize";
 import { useDispatch, useSelector } from 'react-redux';
-import styled from './icon.scss';
+import styled from './styles.js';
 export default function Icon({ icon, text, getActivitiesArray}) {
 
-
+ 
     const [active, setActive] = useState(false);
     return (
         <TouchableOpacity style={styled.icon} onPress={()=> {

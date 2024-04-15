@@ -34,10 +34,10 @@ export default function Auth({ navigation, sendCodeToPhoneNumber, bottomBtn }) {
            <Header onPress={() => navigation.goBack()} isButtons={false}/>
           <ScrollView>
             <Image style={styled.image} source={icons.headerName} />
-            <Text style={[styled.auth__started, {fontSize: RFValue ( 22,  740)}]}>{t("getStarted")}</Text>
-            <Image style={styled.auth__img} source={icons.first} />
+            <Text style={[styled.started, {fontSize: RFValue ( 22,  740)}]}>{t("getStarted")}</Text>
+            <Image style={styled.img} source={icons.first} />
 
-            <Text style={[styled.auth__title, {fontSize: RFValue ( 22 ,  740)}]}>Phone number</Text>
+            <Text style={[styled.title, {fontSize: RFValue ( 22 ,  740)}]}>Phone number</Text>
             <TextInputMask
               type={"cel-phone"}
               options={{
@@ -46,7 +46,7 @@ export default function Auth({ navigation, sendCodeToPhoneNumber, bottomBtn }) {
                 dddMask: "(971) ",
               }}
               ref={(ref) => (phoneField = ref)}
-              style={[styled.auth__input, { borderColor: valid ? "rgba(12, 3, 0, 0.5)" : "#FF0000", marginBottom: valid ? 60 : 39 }, {fontSize: RFValue ( 16 ,  740)}]}
+              style={[styled.input, { borderColor: valid ? "rgba(12, 3, 0, 0.5)" : "#FF0000", marginBottom: valid ? 60 : 39 }, {fontSize: RFValue ( 16 ,  740)}]}
               keyboardType="numeric"
               value={phoneNumber}
               onChangeText={setPhoneNumber}
@@ -60,7 +60,7 @@ export default function Auth({ navigation, sendCodeToPhoneNumber, bottomBtn }) {
               }}
             />
 
-            {valid ? null : <Text style={[styled.auth__error, {fontSize: RFValue ( 14 ,  740)}]}>Enter the correct phone number</Text>}
+            {valid ? null : <Text style={[styled.error, {fontSize: RFValue ( 14 ,  740)}]}>Enter the correct phone number</Text>}
 
           </ScrollView>
           <View style={{ marginBottom: isShowKeyboard ? 5 : 20 }}>

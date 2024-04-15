@@ -3,7 +3,7 @@ import {Text, TouchableOpacity, View, Image} from 'react-native';
 import { RFPercentage, RFValue } from "react-native-responsive-fontsize";
 
 import { icons } from "../../constants";
-import styled from "./button.scss"
+import styled from "./styles.js"
 
 const BtnButton = ({onPress, title, buttonStyle, textStyle, arrow}) => {
     function returnArrow() {

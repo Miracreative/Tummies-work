@@ -9,7 +9,7 @@ import BtnButton from '../../../Components/Button/Button';
 import {icons} from '../../../constants';
 import Icon from '../../../Components/Icon/Icon';
 import Header from '../../../Components/Header/Header';
-import styled from './style.scss';
+import styled from './styles.js';
 export default function NotEat({ navigation }) {
 
   //хук мультиязычности
@@ -86,9 +86,9 @@ return (
                         <View style={{flex: 1, justifyContent: 'space-between', alignItems: 'center', width: "100%"}}>
                         <Header onPress={() => navigation.goBack()} isButtons={false}/>
                             <ScrollView style={{width: "100%", flex: 1}}>
-                                <Text style={[styled.active__title, {fontSize: RFValue ( 24,  740)}]}>{t('activities')}</Text>
+                                <Text style={[styled.title, {fontSize: RFValue ( 24,  740)}]}>{t('activities')}</Text>
 
-                                <View style={styled.active__container}>
+                                <View style={styled.list}>
                                     {food}
                                 </View>
                             </ScrollView>

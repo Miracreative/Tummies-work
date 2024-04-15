@@ -1,6 +1,6 @@
 import React from "react";
 import { View, Animated, useWindowDimensions} from 'react-native';
-import styled from "./style.scss";
+import styled from "./styles.js";
 
 const Dots = ({data, scrollX}) => {
    const {width} = useWindowDimensions();

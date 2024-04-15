@@ -4,7 +4,7 @@ import SlideItem from "../SlideItem/SlideItem";
 import Dots from "../Dots/Dots";
 import {icons} from './../../constants';
 import {useTranslation} from 'react-i18next';
-import styled from "./slider.scss";
+import styled from "./styles.js";
 
 const Slider = () => {
     const {t} = useTranslation();
