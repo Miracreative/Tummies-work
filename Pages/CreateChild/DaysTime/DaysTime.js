@@ -14,7 +14,7 @@ export default function DaysTime({ navigation }) {
 
     const locales = useSelector(state => state.language);
     let {t} = useTranslation();
- 
+    const dispatch = useDispatch();
     //для управляемого инпута
     const [date, setDate] = useState(''); 
     //аидимость календаря
@@ -152,7 +152,7 @@ export default function DaysTime({ navigation }) {
                     source={icons.backDown}/>
           </View>
             </ScrollView>
-        <BtnButton onPress={() => {navigation.navigate("Location")
+        <BtnButton onPress={() => {navigation.navigate("Email")
                                 dispatch(time(active))
                                 dispatch(time(`${weekDay}, ${mounth} ${day},  ${year}`))}} title={t('continue')} buttonStyle={{backgroundColor: '#F55926',borderWidth: 2, borderColor: '#F55926', marginBottom: 20}} textStyle={{color: 'rgba(244, 237, 225, 1)', }}/>
         

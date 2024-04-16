@@ -14,6 +14,7 @@ import Note from './Pages/CreateChild/Note/Note';
 import Activities from './Pages/CreateChild/Activities/Activities';
 import NotEat from './Pages/CreateChild/NotEat/NotEat';
 import DaysTime from './Pages/CreateChild/DaysTime/DaysTime';
+import Email from './Pages/Email/Email';
 
 // import Results from './Pages/Results/Results';
 // import Location from './Pages/Location/Location';
@@ -99,7 +100,7 @@ export default function Navigate() {
     // console.log(i18next)
     return  <NavigationContainer>
         <Stack.Navigator
-            initialRouteName="Main"
+            initialRouteName="DaysTime"
             screenOptions={{
                 headerShown: false,
             }}>
@@ -157,6 +158,10 @@ export default function Navigate() {
             <Stack.Screen
                 name="DaysTime"
                 component={DaysTime}
+            />
+            <Stack.Screen
+                name="Email"
+                component={Email}
             />
 
             {/* <Stack.Screen

@@ -107,6 +107,8 @@
     "shugar": "Shugar",
     "bread": "Bread",
     "eat": "What do you not eat?",
-    "getDiscount": "You can get a discount if you add another child"
+    "getDiscount": "You can get a discount if you add another child",
+    "eMail": "E-mail",
+    "correctEmail": "Enter the correct e-mail"
 
 }
