@@ -2,7 +2,7 @@ import React from 'react';
 import Main from './Pages/Main/Main';
 import Entertaiment from './Pages/Entertaiment/Entertaiment';
 import Catering from './Pages/Catering/Catering';
-import CateringDetail from './Pages/CateringDetail/CateringDetail';
+import CateringDetail from './Pages/Catering/CateringDetail/CateringDetail';
 import Results from './Pages/Results/Results';
 import Login from './Pages/Login/Login';
 import Registration from './Pages/Registration/Registration';
@@ -15,6 +15,10 @@ import Activities from './Pages/CreateChild/Activities/Activities';
 import NotEat from './Pages/CreateChild/NotEat/NotEat';
 import DaysTime from './Pages/CreateChild/DaysTime/DaysTime';
 import Email from './Pages/Email/Email';
+import FirstLocation from './Pages/Location/FirstLocation/FirstLocation';
+import AutoLocation from './Pages/Location/Autolocate/AutoLocate';
+import ApplyLocation from './Pages/Location/ApplyLocation/ApplyLocation';
+// import AutoLocation from './Pages/Location/AutoLocation/AutoLocation';
 
 // import Results from './Pages/Results/Results';
 // import Location from './Pages/Location/Location';
@@ -97,10 +101,12 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 const Stack = createNativeStackNavigator();
 
 export default function Navigate() {
+
+    // console.log(AutoLocation)
     // console.log(i18next)
     return  <NavigationContainer>
         <Stack.Navigator
-            initialRouteName="DaysTime"
+            initialRouteName="FirstLocation"
             screenOptions={{
                 headerShown: false,
             }}>
@@ -162,6 +168,19 @@ export default function Navigate() {
             <Stack.Screen
                 name="Email"
                 component={Email}
+            />
+            <Stack.Screen
+                name="FirstLocation"
+                component={FirstLocation}
+            />
+            <Stack.Screen
+                name="AutoLocation"
+                component={AutoLocation}
+            />
+
+            <Stack.Screen
+                name="ApplyLocation"
+                component={ApplyLocation}
             />
 
             {/* <Stack.Screen

@@ -42,7 +42,7 @@ export default function Email({navigation}) {
         <SafeAreaView style={styled.email}>
         <Header 
                     onPress={() => navigation.goBack()} 
-                    isBack={false} 
+                    isBack={true} 
                     lang={true} 
                     isWhite={true}
                     onPressEntertaiment={() => navigation.navigate('Entertaiment')}
@@ -88,7 +88,8 @@ export default function Email({navigation}) {
             <View style={{justifyContent: 'flex-end'}}>
                 
                 <View style={{marginBottom: 20}}>
-                    <BtnButton onPress={() => {navigation.navigate('Gender')
+                    <BtnButton onPress={() => {
+                                                navigation.navigate('FirstLocation')
                                                 dispatch(userEmail(email))}} title={t('continue')} buttonStyle={{backgroundColor: '#F55926',borderWidth: 2, borderColor: '#F55926', opacity: disable  ? .7 : 1, pointerEvents: disable ? 'none' : 'auto'}} textStyle={{color: 'rgba(244, 237, 225, 1)', }}/>
                 
                 </View>
