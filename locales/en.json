@@ -107,6 +107,11 @@
     "shugar": "Shugar",
     "bread": "Bread",
     "eat": "What do you not eat?",
-    "getDiscount": "You can get a discount if you add another child"
+    "getDiscount": "You can get a discount if you add another child",
+    "eMail": "E-mail",
+    "correctEmail": "Enter the correct e-mail",
+    "locationTitle":"Share your location",
+    "sorry" : "Sorry, the address is outside the delivery area",
+    "wait": "Wait, we are fetching you location..."
 
 }
